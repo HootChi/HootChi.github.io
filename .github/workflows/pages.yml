@@ -1,0 +1,66 @@
+# Builds and deploys https://hootchi.github.io/ (Pages source: GitHub Actions).
+# Studio file: rules in .github/README.md. App publish tools never write inside .github/.
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege: nothing but read by default; only the deploy job gets the Pages permissions.
+permissions:
+  contents: read
+
+# One run at a time per branch; a queued run waits instead of cancelling the one in progress. A
+# manual run from another branch (build and test only) never holds up a deploy from main.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      # No package manager here (built-in modules only), so no dependency cache either.
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+      - name: Self-test the site build
+        run: node .github/test-build.mjs
+      # Built outside the checkout, so the site folder can never be committed or copied into itself.
+      # Warnings, card results and sizes also go to the run summary.
+      - name: Build the site (copy every file, generate index.html from the app cards)
+        run: node .github/build.mjs "$RUNNER_TEMP/site"
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    needs: build
+    # A manual run from another branch builds and tests only.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Reads the Pages settings through the API, so it runs here, where the token may use Pages.
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

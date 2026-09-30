@@ -1,0 +1,13 @@
+{
+  "name": "Tuckaway: Critter Logic",
+  "name_ko": "쉿! 숲속 하숙집",
+  "summary": "A logic puzzle game for iPhone, iPad and Android.",
+  "summary_ko": "iPhone·iPad·Android용 논리 퍼즐 게임입니다.",
+  "since": "2026-09-29",
+  "links": [
+    { "label": "Privacy Policy", "label_ko": "개인정보 처리방침", "href": "privacy/" },
+    { "label": "Terms of Use", "label_ko": "이용약관", "href": "terms/" },
+    { "label": "Support", "label_ko": "고객 지원", "href": "support/" }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}
