@@ -27,7 +27,7 @@ const BUILD = join(dirname(fileURLToPath(import.meta.url)), 'build.mjs');
  */
 const EPOCH_2026 = '1798675200';
 const OLD_DESCRIPTION = '<meta name="description" content="Atto Studio: privacy policy, terms of use and support for Tuckaway: Critter Logic (쉿! 숲속 하숙집).">';
-const NEW_DESCRIPTION = '<meta name="description" content="Atto Studio: privacy policies, terms of use and support for Atto Studio games.">';
+const NEW_DESCRIPTION = '<meta name="description" content="Atto Studio: privacy policies, terms of use and support for Atto Studio apps.">';
 
 /** The hand-written home page this repo had before the page was generated (commit 95a246e). */
 const GOLDEN_INDEX = `<!doctype html>
@@ -83,7 +83,7 @@ const GOLDEN_INDEX = `<!doctype html>
 <main>
 <header>
   <h1>Atto Studio</h1>
-  <p class="meta">Games by Atto Studio · <span lang="ko">Atto Studio의 게임</span></p>
+  <p class="meta">Apps by Atto Studio · <span lang="ko">Atto Studio의 앱</span></p>
 </header>
 
 <section class="card" aria-labelledby="tuckaway">

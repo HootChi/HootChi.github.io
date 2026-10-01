@@ -64,7 +64,7 @@ const RUNNER_COMMAND = '##[';
 /** Copy errors that mean the output folder itself failed: fatal, never a skipped file. */
 const OUTPUT_FATAL = new Set(['ENOSPC', 'EDQUOT', 'EROFS', 'EIO']);
 const ROOT_BUCKET = '(root files)';
-const DESCRIPTION = 'Atto Studio: privacy policies, terms of use and support for Atto Studio games.';
+const DESCRIPTION = 'Atto Studio: privacy policies, terms of use and support for Atto Studio apps.';
 
 class FatalError extends Error {}
 
@@ -532,7 +532,7 @@ function renderPage(cards, year) {
 <main>
 <header>
   <h1>Atto Studio</h1>
-  <p class="meta">Games by Atto Studio · <span lang="ko">Atto Studio의 게임</span></p>
+  <p class="meta">Apps by Atto Studio · <span lang="ko">Atto Studio의 앱</span></p>
 </header>
 
 ${cards.map((c) => `${renderCard(c)}\n`).join('')}<footer>
