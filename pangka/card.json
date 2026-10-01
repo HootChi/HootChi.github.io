@@ -1,0 +1,25 @@
+{
+  "name": "Pangka: Flash Digicam & Roll",
+  "name_ko": "팡카 - 플래시 디카 & 필름 롤",
+  "summary": "A digicam and film roll camera app for iPhone and Android.",
+  "summary_ko": "iPhone·Android용 디카·필름 롤 카메라 앱입니다.",
+  "since": "2026-10-01",
+  "links": [
+    {
+      "label": "Privacy Policy",
+      "label_ko": "개인정보 처리방침",
+      "href": "privacy/"
+    },
+    {
+      "label": "Terms of Use",
+      "label_ko": "이용약관",
+      "href": "terms/"
+    },
+    {
+      "label": "Support",
+      "label_ko": "고객 지원",
+      "href": "support/"
+    }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}
