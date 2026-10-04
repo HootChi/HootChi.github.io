@@ -1,0 +1,20 @@
+{
+  "name": "Bottle Diary",
+  "name_ko": "병 속 일기",
+  "summary": "A one-page-a-day diary you fold into a glass bottle, for iPhone and Android.",
+  "summary_ko": "하루 한 장 쓴 일기를 접어 유리병에 모으는 iPhone·Android 앱입니다.",
+  "since": "2026-10-04",
+  "links": [
+    {
+      "label": "Privacy Policy",
+      "label_ko": "개인정보 처리방침",
+      "href": "privacy/"
+    },
+    {
+      "label": "Support",
+      "label_ko": "고객 지원",
+      "href": "support/"
+    }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}

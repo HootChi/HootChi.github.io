@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Privacy Policy · 개인정보 처리방침 — Bottle Diary</title>
+<meta name="description" content="Privacy policy for Bottle Diary (병 속 일기), the diary-in-a-bottle app by Atto Studio: no data collected, no accounts, servers, ads or tracking. Contact attostudio.support@gmail.com.">
+<link rel="canonical" href="https://hootchi.github.io/bottlediary/privacy/">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbf8f1; --fg: #1f2233; --muted: #5b5f73; --line: #e3dccb; --accent: #9a5b12; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1b1f3a; --fg: #eeeaf6; --muted: #b4b2c8; --line: #343a63; --accent: #ffd27a; --card: #232849; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { padding-bottom: 8px; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; word-break: keep-all; }
+  :lang(ko) { word-break: keep-all; }
+  h2 { font-size: 1.3rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul, ol { padding-left: 1.3em; }
+  ol > li + li { margin-top: 8px; }
+  a { color: var(--accent); }
+  .site { margin: 0 0 20px; }
+  .site a { font-weight: 600; text-decoration: none; }
+  .meta { color: var(--muted); margin: 0; }
+  .toc { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .toc a { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); text-decoration: none; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 24px; }
+  .card h2 { margin: 0; padding: 0; border: 0; }
+  .card ul { list-style: none; padding: 0; margin: 16px 0; }
+  .card li { margin: 8px 0; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  footer p { margin: 8px 0 0; }
+</style>
+</head>
+<body>
+<main>
+<p class="site"><a href="../../">Atto Studio</a></p>
+<header>
+  <h1>Privacy Policy · <span lang="ko">개인정보 처리방침</span></h1>
+  <p class="meta">Bottle Diary (병 속 일기) · Atto Studio</p>
+  <p class="meta">Effective date / 시행일: 2026-10-05</p>
+  <nav class="toc" aria-label="Language"><a href="#english">English</a><a href="#korean" lang="ko">한국어</a></nav>
+</header>
+
+<section id="english" lang="en">
+<h2>English</h2>
+<p class="summary"><strong>Summary.</strong> Bottle Diary ("the app") is a diary app by Atto Studio ("we") that works entirely on your phone. There are no accounts, servers, ads, analytics or tracking, and the app sends nothing to us or to anyone else. Your diaries are kept on your device (on iPhone they may also be in your iCloud or computer backup), and the app moves them off the device only when you export them yourself. If you email us, we use your message only to answer you (section 6).</p>
+
+<h3>1. Information we collect</h3>
+<p>None. We don't run any servers, and the app contains no analytics, crash reporting, advertising or tracking code. The app makes no network requests; on Android it does not even have the internet permission. The app is built with open-source libraries (React Native, Expo and others, listed in <strong>Settings → Open source licenses</strong>); none of them collect or send data. The only information we ever receive is an email you choose to send us (section 6).</p>
+
+<h3>2. Data stored on your device</h3>
+<p>Your diaries (what you write and draw, stickers, the date and the time you kept each one, paper colour and font), the diary you are still writing, your settings and a list of the diaries you recently took out of the bottle are kept in the app's private storage on your device. The app also stores a random number created when it is installed; the app never sends it anywhere and uses it only to tell whether the app was reinstalled, so an old app lock is not carried over.</p>
+<p>Deleting a diary removes it. <strong>Settings → Erase all notes</strong> removes every diary, the diary you are still writing and the list of recently opened diaries; your settings and the app lock stay until you change them. Uninstalling the app removes everything, except that on iPhone the app-lock data can stay in the iOS Keychain (section 3).</p>
+<p>On iPhone this storage may be included in your iCloud or computer backup, which is handled by Apple under your agreement with Apple — we cannot access it. On Android the app opts out of Google's cloud backup, so your diaries are not copied to your Google account. To move your diaries to another phone, use Export notes (section 4).</p>
+
+<h3>3. App lock</h3>
+<ul>
+  <li><strong>Passcode or pattern:</strong> if you turn on the app lock, your passcode or pattern is never stored as such. The app keeps only a salted hash of it (PBKDF2) in the device's secure storage (iOS Keychain / Android Keystore), on this device only, so it does not move to another phone.</li>
+  <li><strong>Face ID, Touch ID and fingerprint:</strong> if you turn on <strong>Settings → Use biometrics</strong>, your phone checks your face or fingerprint itself and tells the app only whether it matched. The app never receives or stores biometric data.</li>
+  <li><strong>Screen protection:</strong> while the lock is on, Android blocks screenshots and screen recording of the app, and iPhone hides the app's contents in the app switcher.</li>
+  <li>There is no server, so a forgotten passcode cannot be recovered: the app can only be reset by erasing every diary on the device.</li>
+  <li><strong>After uninstalling on iPhone:</strong> iOS keeps the app-lock data (the salted hash and the lock settings) in the Keychain after the app is deleted. No other app can read it, and Bottle Diary discards it the next time it is installed and opened.</li>
+</ul>
+
+<h3>4. Exporting and importing</h3>
+<p><strong>Settings → Export notes</strong> creates a file with all your diaries and opens your device's share sheet; you choose where it goes (for example Files, a cloud drive or a message). We don't receive it, and what happens next is governed by the app or service you choose. The file is not encrypted, so anyone who has it can read your diaries: keep it somewhere safe. <strong>Import notes</strong> reads only the file you pick in the system file picker. While exporting and importing, the app keeps a temporary copy of the file in its private storage; it deletes the imported copy right after reading it, and the exported one the next time you open the app, export again or erase all diaries.</p>
+
+<h3>5. Motion sensor and vibration</h3>
+<p>To let the diaries in the bottle slide and bounce when you tilt or shake your phone, the app reads the motion sensor (accelerometer) while the bottle screen is open in front of you (not while the app is locked or another screen is open). The readings are used immediately on your device and are never stored or sent. You can turn this off in <strong>Settings → Tilt &amp; shake</strong>, and vibration in <strong>Settings → Haptics</strong>.</p>
+
+<h3>6. Contacting support</h3>
+<p>If you email us, we receive your email address and what you write (for a refund request, also your Google Play order number). We use them only to answer you and, if you ask for a refund, to find the order in Google Play Console and refund it; we never share them or use them for marketing, keep them only as long as needed to handle your request and delete them when you ask. Support email is received and stored in Gmail, a service of Google LLC, on Google's servers in the United States and other countries where Google has data centers.</p>
+
+<h3>7. Device permissions</h3>
+<p>The app asks for no permissions except one optional one: on iPhone, Face ID, which iOS asks you to allow the first time the app unlocks with Face ID after you turn on <strong>Settings → Use biometrics</strong>. It does not access your camera, microphone, photos, contacts, location or notifications. On Android these permissions are granted at install and give no access to your data:</p>
+<ul>
+  <li><code>USE_BIOMETRIC</code> and <code>USE_FINGERPRINT</code> — to unlock the app with your fingerprint or face, if you turn on <strong>Use biometrics</strong>;</li>
+  <li><code>VIBRATE</code> — for haptic feedback;</li>
+  <li><code>com.hootchi.bottlediary.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code> — added by the AndroidX Core library; only apps signed with our key can hold it.</li>
+</ul>
+<p>Because Bottle Diary is a paid app, Google Play may also add a licence check (<code>com.android.vending.CHECK_LICENSE</code>), with which the app asks the Google Play Store app on your device whether this copy was installed from Google Play. The app still has no internet permission.</p>
+
+<h3>8. Children</h3>
+<p>The app is not directed at children in particular, and it collects no personal information from anyone, including children.</p>
+
+<h3>9. Keeping and deleting data</h3>
+<p>The app gives us no data about you, so there is nothing of that kind for us to delete; support emails are deleted from the mailbox, including its trash, once they are no longer needed or when you ask. To remove your diaries, delete them in the app or use <strong>Settings → Erase all notes</strong>; to remove all of the app's data, uninstall it (on iPhone, see section 3 for the app lock), and delete any exported files and iPhone backups you no longer want.</p>
+
+<h3>10. Your rights</h3>
+<p>Depending on where you live (for example under the GDPR, UK GDPR, California CCPA/CPRA or Korea's Personal Information Protection Act), you may have the right to access, correct, delete or restrict the use of your personal information. Because the app gives us no personal information, we usually hold nothing about you beyond any emails you sent us, but we will answer every request.</p>
+
+<h3>11. Security</h3>
+<p>Data on your device is protected by your operating system's app sandbox, the app lock keeps only a salted hash of your passcode or pattern, and the app transmits nothing over the network.</p>
+
+<h3>12. Changes to this policy</h3>
+<p>If this policy changes, we will update this page and its effective date, and mention important changes in the app's update notes.</p>
+
+<h3>13. Contact</h3>
+<p>Atto Studio — <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+</section>
+
+<section id="korean" lang="ko">
+<h2>한국어</h2>
+<p class="summary"><strong>요약.</strong> 병 속 일기(이하 "앱")는 Atto Studio(이하 "개발자")가 만든 일기 앱으로, 모든 처리가 이용자의 휴대폰 안에서 이뤄집니다. 회원가입이나 계정이 없으며, 개발자는 앱을 통해 이용자의 개인정보를 수집·보관·판매·제공하지 않습니다. 서버, 광고, 분석, 추적 도구가 없고 앱은 개발자나 다른 누구에게도 정보를 보내지 않습니다. 일기는 이용자의 기기에 보관되며(iPhone에서는 iCloud나 컴퓨터 백업에도 포함될 수 있음), 앱이 일기를 기기 밖으로 보내는 것은 이용자가 직접 내보낼 때뿐입니다. 이용자가 이메일로 문의하면 보내 주신 내용은 답변에만 사용합니다(제6조).</p>
+
+<h3>제1조 (처리하는 개인정보 항목과 목적)</h3>
+<p>개발자는 앱을 통해 개인정보를 수집하거나 처리하지 않습니다. 개발자는 서버를 운영하지 않으며, 앱에는 분석, 오류 보고, 광고, 추적 도구가 없습니다. 앱은 네트워크 통신을 하지 않으며, Android에서는 인터넷 권한 자체가 없습니다. 앱에 포함된 오픈소스 라이브러리(React Native, Expo 등, <strong>설정 → 오픈소스 라이선스</strong>에 목록이 있음)도 정보를 수집하거나 전송하지 않습니다. 개발자가 받는 정보는 이용자가 직접 이메일로 보낸 문의뿐이며, 제6조에 따라 처리합니다.</p>
+
+<h3>제2조 (기기에 저장되는 정보와 보유 기간)</h3>
+<p>이용자가 쓴 일기(글, 그림, 스티커, 날짜와 보관한 시각, 종이 색, 글꼴), 쓰던 중인 일기, 설정, 최근에 꺼내 본 일기 목록은 기기 안의 앱 전용 저장 공간에 보관됩니다. 앱을 설치할 때 만든 임의의 번호도 함께 저장되는데, 앱은 이 번호를 어디로도 보내지 않으며 앱을 다시 설치했는지 확인해 예전 앱 잠금이 남지 않게 하는 데만 씁니다.</p>
+<p>일기를 지우면 그 일기가 삭제됩니다. <strong>설정 → 모든 일기 지우기</strong>를 실행하면 모든 일기, 쓰던 중인 일기, 최근에 꺼내 본 일기 목록이 삭제되며, 설정과 앱 잠금은 직접 바꿀 때까지 남습니다. 앱을 삭제하면 모두 삭제됩니다. 다만 iPhone에서는 앱 잠금 정보가 iOS 키체인에 남을 수 있습니다(제3조).</p>
+<p>iPhone에서는 이 저장 공간이 iCloud 또는 컴퓨터 백업에 포함될 수 있으나, 이는 Apple과 이용자 사이의 약관에 따르며 개발자는 접근할 수 없습니다. Android에서는 앱이 Google 클라우드 백업을 사용하지 않으므로 일기가 Google 계정에 복사되지 않습니다. 다른 휴대폰으로 일기를 옮기려면 일기 내보내기(제5조)를 이용하세요.</p>
+
+<h3>제3조 (앱 잠금 정보)</h3>
+<ul>
+  <li><strong>비밀번호·패턴:</strong> 앱 잠금을 켜도 비밀번호나 패턴 자체는 저장하지 않습니다. 솔트를 더한 해시값(PBKDF2)만 기기의 보안 저장소(iOS 키체인 / Android 키스토어)에 이 기기 전용으로 보관하므로 다른 휴대폰으로 옮겨지지 않습니다.</li>
+  <li><strong>Face ID·Touch ID·지문:</strong> <strong>설정 → 생체 인증 사용</strong>을 켜면 휴대폰이 직접 얼굴이나 지문을 확인하고, 앱에는 일치 여부만 알려 줍니다. 앱은 생체 정보를 받거나 저장하지 않습니다.</li>
+  <li><strong>화면 보호:</strong> 잠금이 켜져 있는 동안 Android에서는 앱 화면의 캡처와 녹화를 막고, iPhone에서는 앱 전환 화면에서 앱 내용을 가립니다.</li>
+  <li>서버가 없으므로 비밀번호를 잊으면 복구할 수 없고, 기기의 모든 일기를 지워야만 초기화할 수 있습니다.</li>
+  <li><strong>iPhone에서 앱을 삭제한 뒤:</strong> 앱을 삭제해도 앱 잠금 정보(해시값과 잠금 설정)가 iOS 키체인에 남습니다. 다른 앱은 읽을 수 없으며, 병 속 일기를 다시 설치해 열면 앱이 이를 폐기합니다.</li>
+</ul>
+
+<h3>제4조 (개인정보의 제3자 제공, 처리 위탁과 국외 이전)</h3>
+<p>개발자는 개인정보를 제3자에게 제공하지 않습니다. 다만 고객 문의 메일을 받고 보관하기 위해 아래와 같이 개인정보 처리를 위탁하며, 이 과정에서 개인정보가 국외로 이전됩니다. 앱에는 광고나 분석을 위한 외부 서비스가 없습니다.</p>
+<ul>
+  <li>수탁자(이전받는 자): Google LLC (Gmail) — 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA, <a href="mailto:googlekrsupport@google.com">googlekrsupport@google.com</a></li>
+  <li>위탁 업무: 문의 메일 수신·보관</li>
+  <li>이전 국가: 미국 등 Google 데이터센터가 있는 국가</li>
+  <li>이전 항목: 이메일 주소, 문의 내용(환불을 요청하시는 경우 Google Play 주문번호 포함)</li>
+  <li>이전 시기와 방법: 이용자가 문의 메일을 보낼 때 네트워크를 통해 전송</li>
+  <li>보유·이용 기간: 제6조와 같음</li>
+  <li>거부 방법과 효과: 이메일로 문의하지 않으면 이전되지 않습니다. 이 경우 이메일 답변과 이메일을 통한 환불(구매 후 48시간이 지난 경우)은 받을 수 없지만, 구매 후 48시간 안에는 Google Play에서 직접 환불을 요청할 수 있고 앱은 모두 그대로 이용할 수 있습니다.</li>
+</ul>
+
+<h3>제5조 (일기 내보내기·가져오기)</h3>
+<p><strong>설정 → 일기 내보내기</strong>를 실행하면 모든 일기가 담긴 파일을 만들고 기기의 공유 창을 엽니다. 어디로 보낼지(파일 앱, 클라우드 드라이브, 메시지 등)는 이용자가 정하며, 개발자는 그 파일을 받지 않고 그 이후의 처리는 이용자가 고른 앱이나 서비스의 방침을 따릅니다. 이 파일은 암호화되어 있지 않아 파일을 가진 사람은 누구나 일기를 읽을 수 있으니 안전한 곳에 보관하세요. <strong>일기 가져오기</strong>는 이용자가 시스템 파일 선택기에서 고른 파일만 읽습니다. 내보내기·가져오기 중에는 앱 전용 저장 공간에 파일의 임시 사본이 생기며, 가져온 사본은 읽은 즉시, 내보낸 사본은 다음에 앱을 열거나 다시 내보내거나 모든 일기를 지울 때 앱이 삭제합니다.</p>
+
+<h3>제6조 (고객 문의)</h3>
+<p>이용자가 이메일로 문의하면 개발자는 이메일 주소와 이용자가 보낸 내용(환불을 요청하시는 경우 Google Play 주문번호 포함)을 받게 됩니다. 이 정보는 답변과, 환불을 요청하신 경우 Google Play Console에서 주문을 확인하고 환불하는 데에만 사용하며, 제3자에게 제공하거나 마케팅에 쓰지 않습니다. 문의 메일은 Google LLC의 Gmail로 받아(제4조) 처리에 필요한 기간 동안만 보관하며, 요청하시면 삭제합니다.</p>
+
+<h3>제7조 (앱 접근권한)</h3>
+<ul>
+  <li>필수 접근권한: 없음</li>
+  <li>선택 접근권한: Face ID(iPhone, <strong>설정 → 생체 인증 사용</strong>을 켠 뒤 처음 Face ID로 열 때 iOS가 허용 여부를 묻습니다). 기기 설정에서 언제든 바꿀 수 있습니다.</li>
+  <li>참고: 앱은 카메라, 마이크, 사진, 연락처, 위치, 알림에 접근하지 않습니다. 병 안의 일기를 움직이기 위해 동작 센서(가속도계)를 병 화면이 앞에 열려 있는 동안만 읽으며(앱이 잠겨 있거나 다른 화면이 열려 있을 때는 읽지 않음), 이 값은 기기 안에서 바로 쓰이고 저장하거나 전송하지 않습니다(<strong>설정 → 기울이기·흔들기</strong>에서 끌 수 있음). Android에서는 설치할 때 다음 권한이 자동으로 부여되며 이용자의 정보에 접근하지 않습니다: <code>USE_BIOMETRIC</code>·<code>USE_FINGERPRINT</code>(생체 인증 사용을 켠 경우 지문·얼굴로 열기), <code>VIBRATE</code>(진동 피드백, <strong>설정 → 진동</strong>에서 끌 수 있음), AndroidX Core 라이브러리가 추가하는 <code>com.hootchi.bottlediary.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>(개발자의 서명 키로 서명된 앱만 가질 수 있음). 병 속 일기는 유료 앱이라 Google Play가 라이선스 확인 권한(<code>com.android.vending.CHECK_LICENSE</code>)을 추가할 수 있으며, 앱은 이 권한으로 기기의 Google Play 스토어 앱에 이 사본이 Google Play에서 설치됐는지 확인합니다. 앱에는 여전히 인터넷 권한이 없습니다.</li>
+</ul>
+
+<h3>제8조 (아동의 개인정보)</h3>
+<p>앱은 아동을 따로 대상으로 하지 않으며, 아동을 포함한 누구의 개인정보도 수집하지 않습니다.</p>
+
+<h3>제9조 (파기 절차와 방법)</h3>
+<p>앱을 통해 개발자가 보관하는 개인정보는 없습니다. 문의 메일은 처리에 필요한 기간이 지나거나 이용자가 삭제를 요청하면 지체 없이 파기하며, 메일함과 휴지통에서 모두 삭제하여 복구할 수 없도록 합니다. 일기를 지우려면 앱에서 지우거나 <strong>설정 → 모든 일기 지우기</strong>를 실행하고, 앱의 모든 데이터를 지우려면 앱을 삭제하세요(iPhone의 앱 잠금 정보는 제3조 참고). 더 필요 없는 내보낸 파일과 iPhone 백업도 지워 주세요.</p>
+
+<h3>제10조 (정보주체의 권리와 행사 방법)</h3>
+<p>이용자는 개인정보 열람, 정정·삭제, 처리 정지를 요구할 수 있으며, 법정대리인이나 위임을 받은 대리인을 통해서도 요구할 수 있습니다. 개발자가 보관하는 개인정보는 문의 메일뿐이지만 모든 요청에 답변합니다. 요청은 아래 연락처로 보내 주세요.</p>
+
+<h3>제11조 (안전성 확보 조치)</h3>
+<p>기기의 데이터는 운영체제의 앱 격리(샌드박스)로 보호되고, 앱 잠금은 비밀번호·패턴의 해시값만 보관하며, 앱은 네트워크로 아무것도 전송하지 않습니다.</p>
+
+<h3>제12조 (개인정보 보호책임자)</h3>
+<ul>
+  <li>담당: Atto Studio</li>
+  <li>연락처: <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></li>
+</ul>
+
+<h3>제13조 (권익침해 구제 방법)</h3>
+<p>개인정보 침해에 대한 상담이나 신고는 아래 기관에 문의할 수 있습니다.</p>
+<ul>
+  <li>개인정보분쟁조정위원회: 1833-6972 (<a href="https://www.kopico.go.kr">www.kopico.go.kr</a>)</li>
+  <li>개인정보침해신고센터: 118 (<a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a>)</li>
+  <li>대검찰청: 1301 (<a href="https://www.spo.go.kr">www.spo.go.kr</a>)</li>
+  <li>경찰청: 182 (<a href="https://ecrm.police.go.kr">ecrm.police.go.kr</a>)</li>
+</ul>
+
+<h3>제14조 (개인정보 처리방침의 변경)</h3>
+<p>이 방침은 2026년 10월 5일부터 시행합니다. 내용이 바뀌면 이 페이지와 시행일을 고치고, 중요한 변경은 앱 업데이트 안내에 알립니다.</p>
+</section>
+
+<footer>
+  <nav aria-label="Bottle Diary"><a href="../privacy/" aria-current="page">Privacy Policy · 개인정보 처리방침</a><a href="../support/">Support · 고객 지원</a></nav>
+  <p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+</footer>
+</main>
+</body>
+</html>
