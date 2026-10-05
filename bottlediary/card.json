@@ -11,6 +11,11 @@
       "href": "privacy/"
     },
     {
+      "label": "Terms of Use",
+      "label_ko": "이용약관",
+      "href": "terms/"
+    },
+    {
       "label": "Support",
       "label_ko": "고객 지원",
       "href": "support/"

@@ -74,7 +74,7 @@
   <li><strong>Passcode or pattern:</strong> if you turn on the app lock, your passcode or pattern is never stored as such. The app keeps only a salted hash of it (PBKDF2) in the device's secure storage (iOS Keychain / Android Keystore), on this device only, so it does not move to another phone.</li>
   <li><strong>Face ID, Touch ID and fingerprint:</strong> if you turn on <strong>Settings → Use biometrics</strong>, your phone checks your face or fingerprint itself and tells the app only whether it matched. The app never receives or stores biometric data.</li>
   <li><strong>Screen protection:</strong> while the lock is on, Android blocks screenshots and screen recording of the app, and iPhone hides the app's contents in the app switcher.</li>
-  <li>There is no server, so a forgotten passcode cannot be recovered: the app can only be reset by erasing every diary on the device.</li>
+  <li>There is no server, so a forgotten passcode cannot be recovered. If biometrics are on, you can still unlock with them and set a new passcode or pattern; otherwise the app can only be reset by erasing every diary on the device.</li>
   <li><strong>After uninstalling on iPhone:</strong> iOS keeps the app-lock data (the salted hash and the lock settings) in the Keychain after the app is deleted. No other app can read it, and Folded Days discards it the next time the app is installed and opened.</li>
 </ul>
 
@@ -132,7 +132,7 @@
   <li><strong>비밀번호·패턴:</strong> 앱 잠금을 켜도 비밀번호나 패턴 자체는 저장하지 않습니다. 솔트를 더한 해시값(PBKDF2)만 기기의 보안 저장소(iOS 키체인 / Android 키스토어)에 이 기기 전용으로 보관하므로 다른 휴대폰으로 옮겨지지 않습니다.</li>
   <li><strong>Face ID·Touch ID·지문:</strong> <strong>설정 → 생체 인증 사용</strong>을 켜면 휴대폰이 직접 얼굴이나 지문을 확인하고, 앱에는 일치 여부만 알려 줍니다. 앱은 생체 정보를 받거나 저장하지 않습니다.</li>
   <li><strong>화면 보호:</strong> 잠금이 켜져 있는 동안 Android에서는 앱 화면의 캡처와 녹화를 막고, iPhone에서는 앱 전환 화면에서 앱 내용을 가립니다.</li>
-  <li>서버가 없으므로 비밀번호를 잊으면 복구할 수 없고, 기기의 모든 일기를 지워야만 초기화할 수 있습니다.</li>
+  <li>서버가 없으므로 비밀번호를 잊으면 복구할 수 없습니다. 생체 인증을 켜 두었다면 생체 인증으로 열어 비밀번호나 패턴을 새로 정할 수 있고, 그렇지 않으면 기기의 모든 일기를 지워야만 초기화할 수 있습니다.</li>
   <li><strong>iPhone에서 앱을 삭제한 뒤:</strong> 앱을 삭제해도 앱 잠금 정보(해시값과 잠금 설정)가 iOS 키체인에 남습니다. 다른 앱은 읽을 수 없으며, 앱을 다시 설치해 처음 열 때 이 정보를 폐기합니다.</li>
 </ul>
 
@@ -145,7 +145,7 @@
   <li>이전 항목: 이메일 주소, 문의 내용(환불을 요청하시는 경우 Google Play 주문번호 포함)</li>
   <li>이전 시기와 방법: 이용자가 문의 메일을 보낼 때 네트워크를 통해 전송</li>
   <li>보유·이용 기간: 제6조와 같음</li>
-  <li>거부 방법과 효과: 이메일로 문의하지 않으면 이전되지 않습니다. 이 경우 이메일 답변과 이메일을 통한 환불(구매 후 48시간이 지난 경우)은 받을 수 없지만, 구매 후 48시간 안에는 Google Play에서 직접 환불을 요청할 수 있고 앱은 모두 그대로 이용할 수 있습니다.</li>
+  <li>거부 방법과 효과: 이메일로 문의하지 않으면 이전되지 않습니다. 이 경우 이메일 답변과 이메일을 통한 환불(Google Play에서 환불되지 않았거나 구매 후 48시간이 지난 경우)은 받을 수 없지만, 구매 후 48시간 안에는 Google Play에서 직접 환불을 요청할 수 있고 앱은 모두 그대로 이용할 수 있습니다.</li>
 </ul>
 
 <h3>제5조 (일기 내보내기·가져오기)</h3>
@@ -193,7 +193,7 @@
 </section>
 
 <footer>
-  <nav aria-label="Folded Days"><a href="../privacy/" aria-current="page">Privacy Policy · 개인정보 처리방침</a><a href="../support/">Support · 고객 지원</a></nav>
+  <nav aria-label="Folded Days"><a href="../privacy/" aria-current="page">Privacy Policy · 개인정보 처리방침</a><a href="../terms/">Terms of Use · 이용약관</a><a href="../support/">Support · 고객 지원</a></nav>
   <p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
 </footer>
 </main>
