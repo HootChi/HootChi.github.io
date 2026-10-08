@@ -1,0 +1,13 @@
+{
+  "name": "Lumi Pop",
+  "name_ko": "루미팡",
+  "summary": "A match-3 puzzle game for iPhone, iPad and Android.",
+  "summary_ko": "iPhone·iPad·Android용 매치3 퍼즐 게임입니다.",
+  "since": "2026-10-08",
+  "links": [
+    { "label": "Privacy Policy", "label_ko": "개인정보 처리방침", "href": "privacy/" },
+    { "label": "Terms of Use", "label_ko": "이용약관", "href": "terms/" },
+    { "label": "Support", "label_ko": "고객 지원", "href": "support/" }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}
