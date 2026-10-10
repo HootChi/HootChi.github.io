@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>접어둔 하루 · Folded Days</title>
+<meta name="description" content="접어둔 하루: 매일 한 장, 작은 종이에 마음을 적고 접어서 유리병에 모으는 나만 보는 일기장. Folded Days, a private sticky-note journal: write a little note each day, fold it, and keep it in a glass jar. 곧 출시 · Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atto Studio">
+<meta property="og:title" content="접어둔 하루 · Folded Days">
+<meta property="og:description" content="매일 한 장, 나만 보는 일기장 · Private sticky-note journal">
+<meta property="og:url" content="https://hootchi.github.io/bottlediary/">
+<meta property="og:image" content="https://hootchi.github.io/bottlediary/img/banner.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="접어둔 하루: 매일 한 장, 나만 보는 일기장">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://hootchi.github.io/bottlediary/">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbf8f1; --fg: #1f2233; --muted: #5b5f73; --line: #e3dccb; --accent: #9a5b12; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1b1f3a; --fg: #eeeaf6; --muted: #b4b2c8; --line: #343a63; --accent: #ffd27a; --card: #232849; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { padding-bottom: 8px; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; word-break: keep-all; }
+  :lang(ko) { word-break: keep-all; }
+  h2 { font-size: 1.3rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul, ol { padding-left: 1.3em; }
+  ol > li + li { margin-top: 8px; }
+  a { color: var(--accent); }
+  .site { margin: 0 0 20px; }
+  .site a { font-weight: 600; text-decoration: none; }
+  .meta { color: var(--muted); margin: 0; }
+  .toc { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .toc a { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); text-decoration: none; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 24px; }
+  .card h2 { margin: 0; padding: 0; border: 0; }
+  .card ul { list-style: none; padding: 0; margin: 16px 0; }
+  .card li { margin: 8px 0; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  footer p { margin: 8px 0 0; }
+</style>
+<style>
+  .hero { margin: 0 0 8px; }
+  .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; border-radius: 16px; border: 1px solid var(--line); background: #ece1d2; }
+  .title { display: flex; align-items: center; gap: 14px; margin: 20px 0 8px; }
+  .title img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+  .title h1 { margin: 0; }
+  .title .en { display: block; font-size: 1.05rem; font-weight: 600; color: var(--muted); }
+  .pitch { font-size: 1.1rem; margin: 8px 0 0; }
+  .pitch + .pitch { margin-top: 2px; color: var(--muted); font-size: 1rem; }
+  .soon { display: inline-block; margin: 16px 0 0; padding: 4px 14px; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .cta a { display: inline-block; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-weight: 600; text-decoration: none; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 16px 0 0; padding: 0 0 8px; list-style: none; }
+  .shots li { flex: 0 0 auto; width: min(44%, 200px); margin: 0; scroll-snap-align: start; }
+  @media (min-width: 640px) { .shots li { width: calc((100% - 36px) / 4); } }
+  .shots img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 12px; border: 1px solid var(--line); background: #ece1d2; }
+  .steps li strong { white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+<p class="site"><a href="../">Atto Studio</a></p>
+<header class="hero">
+  <img class="banner" src="img/banner.jpg" width="1024" height="500" alt="접어둔 하루: 매일 한 장, 나만 보는 일기장">
+  <div class="title">
+    <img src="img/icon.jpg" width="192" height="192" alt="">
+    <h1>접어둔 하루 <span class="en" lang="en">Folded Days</span></h1>
+  </div>
+  <p class="pitch">매일 한 장, 작은 종이에 마음을 적고 접어서 유리병에 모아요. 나만 보는 일기장이에요.</p>
+  <p class="pitch" lang="en">Write a little note each day, fold it, and keep it in a glass jar.</p>
+  <p class="soon">곧 출시 · <span lang="en">Coming soon</span></p>
+  <nav class="cta" aria-label="바로 가기 · Jump to">
+    <a href="#join">비공개 테스트 참여하기</a>
+    <a href="#join-en" lang="en">Join the closed test</a>
+  </nav>
+  <nav class="toc" aria-label="Language"><a href="#korean">한국어</a><a href="#english" lang="en">English</a></nav>
+</header>
+
+<section id="korean">
+<h2>한국어</h2>
+<p>하루를 길게 쓰지 않아도 괜찮아요. 손바닥만 한 작은 종이에 오늘의 마음을 적고, 접어서 유리병에 쏙 넣어두세요. 보관한 일기는 고칠 수 없어요. 그날의 마음 그대로 남겨두세요.</p>
+<ul>
+  <li><strong>종이 한 장의 일기</strong>: 펼쳐지는 작은 종이에 글을 쓰고, 그림을 그리고, 스티커를 붙여요. 종이 색 8가지, 손글씨 글꼴 5가지에 같은 날 여러 장도 자유롭게 쓸 수 있어요.</li>
+  <li><strong>접어서, 병 속으로</strong>: 보관을 누르면 종이가 사각사각 접혀 병 속으로 떨어져요. 병을 흔들거나 마개를 열면 지난날의 일기가 하나 날아올라요.</li>
+  <li><strong>달력으로 돌아보기</strong>: 일기를 쓴 날을 한눈에 보고, 날짜를 누르면 그날의 일기들을 넘겨봐요.</li>
+  <li><strong>나만 보는 일기</strong>: 서버도, 계정도 없어요. 모든 일기는 내 폰에만 있고, 비밀번호·패턴·생체 인증으로 잠글 수 있어요. 백업은 직접 내보내고 가져와요.</li>
+  <li>광고도 인앱 결제도 없는 유료 앱이에요.</li>
+</ul>
+<ul class="shots" aria-label="앱 화면">
+  <li><img src="img/shot-ko-1.jpg" width="540" height="960" loading="lazy" alt="일기가 쌓인 코르크 병: 작은 종이에 마음을 적어 유리병에 모아요"></li>
+  <li><img src="img/shot-ko-2.jpg" width="540" height="960" loading="lazy" alt="일기 쓰기: 작은 종이에 글·그림·스티커를 손글씨 글꼴로"></li>
+  <li><img src="img/shot-ko-3.jpg" width="540" height="960" loading="lazy" alt="월 달력: 일기를 쓴 날이 한눈에 보여요"></li>
+  <li><img src="img/shot-ko-4.jpg" width="540" height="960" loading="lazy" alt="다크 모드의 잼 병: 나만 보는 조용한 일기"></li>
+</ul>
+
+<h3 id="join">곧 출시돼요. 먼저 써 보고 싶다면</h3>
+<p>iPhone·Android로 곧 나와요. 지금은 Google Play에서 Android 비공개 테스트를 하고 있어요. 유료 앱이지만, 테스트에 참여하는 분께 무료로 설치할 수 있는 1회용 코드를 개인 메일로 보내 드려요. 코드가 없으면 Google Play에 원래 가격이 보여요. Android 7.0 이상. 지금은 일본에서는 설치할 수 없어요.</p>
+<ol class="steps">
+  <li><strong>테스터 그룹 가입</strong>: 폰의 Play 스토어에 로그인된 Google 계정으로 <a href="https://groups.google.com/g/foldeddays-testers">groups.google.com/g/foldeddays-testers</a>에 들어가 <strong>그룹 가입</strong>을 눌러 주세요. 계정이 다르면 설치가 안 돼요. 그룹 가입만으로는 참여가 끝나지 않아요.</li>
+  <li><strong>테스트 참여</strong>: 폰에서 같은 계정으로 <a href="https://play.google.com/apps/testing/com.attostudio.bottlediary">테스트 참여 페이지</a>를 열고 <strong>테스터 되기</strong>를 눌러 주세요. 아직 설치(구매)는 하지 마세요. 3단계에서 코드를 먼저 넣어야 무료예요.</li>
+  <li><strong>코드 사용</strong>: 코드는 그룹에 가입한 Google 계정 메일로 보내 드려요. 한 번만 쓸 수 있는 개인 코드라 다른 사람에게 주지 말아 주세요. 코드는 수량이 정해져 있어요. Play 스토어 앱에서 오른쪽 위 프로필 사진 → <strong>결제 및 정기 결제</strong> → <strong>코드 사용</strong>을 누르고, 코드를 입력한 뒤 <strong>사용</strong>을 눌러 주세요. 아직 코드를 못 받으셨다면 결제하지 말고 <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>으로 알려 주세요.</li>
+  <li><strong>설치</strong>: 테스트 참여 페이지에서 <strong>Google Play에서 다운로드</strong>를 눌러 '접어둔 하루'를 설치하세요. 테스트에 참여한 뒤 설치할 수 있게 되기까지 몇 분 걸릴 수 있어요. 결제 화면 없이 설치되면 성공이에요. 가격이나 결제 화면이 보이면 결제하지 말고 메일로 알려 주세요.</li>
+</ol>
+<p>적어도 14일 동안, 테스트가 끝났다고 알려 드릴 때까지 앱을 지우거나 테스트를 나가지 말아 주세요. 업데이트가 오면 받아 주세요. 의견은 앱의 <strong>설정 → 정보 → 의견 보내기</strong>나 <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>으로 보내 주세요. 궁금한 점도 같은 메일로 물어봐 주세요.</p>
+</section>
+
+<section id="english" lang="en">
+<h2>English</h2>
+<p>You don't need to write a lot. Put today on a little sticky note, fold it, and drop it into a glass jar. Kept notes can't be edited: they stay exactly as you felt that day.</p>
+<ul>
+  <li><strong>A diary the size of a sticky note</strong>: type, draw and add stickers on a tiny sheet of paper, with 8 paper colours and 5 handwriting fonts. Write as many notes a day as you like.</li>
+  <li><strong>Fold it into the jar</strong>: tap Keep and watch the note fold up and drop into the jar. Shake the jar or open the lid and an old note floats up to greet you.</li>
+  <li><strong>Look back with the calendar</strong>: see which days you wrote at a glance, and flip through the notes of any day.</li>
+  <li><strong>Just for you</strong>: no servers, no accounts. Your notes stay on your phone, behind a passcode, pattern or biometric lock if you like, and you export and import your own backups.</li>
+  <li>A paid app with no ads and no in-app purchases.</li>
+</ul>
+<ul class="shots" aria-label="Screenshots (Korean version)">
+  <li><img src="img/shot-ko-1.jpg" width="540" height="960" loading="lazy" alt="Korean screen: a cork jar filling up with folded notes"></li>
+  <li><img src="img/shot-ko-2.jpg" width="540" height="960" loading="lazy" alt="Korean screen: writing a note with stickers in a handwriting font"></li>
+  <li><img src="img/shot-ko-3.jpg" width="540" height="960" loading="lazy" alt="Korean screen: the month calendar shows the days you wrote"></li>
+  <li><img src="img/shot-ko-4.jpg" width="540" height="960" loading="lazy" alt="Korean screen: the jam jar in dark mode"></li>
+</ul>
+
+<h3 id="join-en">Coming soon. Want to try it first?</h3>
+<p>Folded Days is coming to iPhone and Android. Right now there's a closed test on Google Play for Android. It's a paid app, but we email a personal one-time code to testers taking part in the test so they can install it free. Without a code, Google Play shows the normal price. Android 7.0 or later. Not available in Japan for now.</p>
+<ol class="steps">
+  <li><strong>Join the Google Group</strong>: with the Google account your phone's Play Store is signed in with, open <a href="https://groups.google.com/g/foldeddays-testers">groups.google.com/g/foldeddays-testers</a> and tap <strong>Join group</strong>. With a different account, the install won't show up. Joining the group alone isn't enough.</li>
+  <li><strong>Become a tester</strong>: with the same account, open the <a href="https://play.google.com/apps/testing/com.attostudio.bottlediary">test page</a> on your phone and tap <strong>Become a tester</strong>. Don't install (buy) it yet — redeem your code in step 3 first so it's free.</li>
+  <li><strong>Redeem your code</strong>: the code comes by email to the Google account you joined the group with. It's a personal code that works once, so please don't pass it on. Codes are limited. In the Play Store app, tap your profile icon (top right) → <strong>Payments &amp; subscriptions</strong> → <strong>Redeem code</strong>, enter the code and tap <strong>Redeem</strong>. No code yet? Don't pay. Email <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a> instead.</li>
+  <li><strong>Install</strong>: on the test page, tap <strong>Download it on Google Play</strong> and install. It can take a few minutes after you join the test before you can install it. If there's no payment screen, you're set. If you see a price or a payment screen, don't pay. Email us instead.</li>
+</ol>
+<p>Please keep the app installed and stay in the test for at least 14 days, until we tell you it's over, and take updates when they come. Send feedback from <strong>Settings → About → Send feedback</strong> in the app, or email <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>. Questions are welcome at the same address.</p>
+</section>
+
+<footer>
+  <nav aria-label="Folded Days"><a href="privacy/">Privacy Policy · 개인정보 처리방침</a><a href="terms/">Terms of Use · 이용약관</a><a href="support/">Support · 고객 지원</a></nav>
+  <p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+</footer>
+</main>
+</body>
+</html>

@@ -6,6 +6,11 @@
   "since": "2026-10-04",
   "links": [
     {
+      "label": "About the app",
+      "label_ko": "앱 소개",
+      "href": "index.html"
+    },
+    {
       "label": "Privacy Policy",
       "label_ko": "개인정보 처리방침",
       "href": "privacy/"
