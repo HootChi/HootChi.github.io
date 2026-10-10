@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>팡카 - 플래시 디카 &amp; 필름 롤 · Pangka: Flash Digicam &amp; Roll</title>
+<meta name="description" content="팡카: 플래시 팡! 그 시절 디카 감성. 디카 바디 8종, 24컷 롤 모드, 주황 LED 날짜 스탬프. Pangka: Flash Digicam &amp; Roll, a Y2K digicam with 8 bodies, 24-shot film rolls and an orange LED date stamp. 곧 출시 · Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atto Studio">
+<meta property="og:title" content="팡카 - 플래시 디카 &amp; 필름 롤 · Pangka: Flash Digicam &amp; Roll">
+<meta property="og:description" content="플래시 팡! 그 시절 디카 감성 · Flash on. A Y2K digicam with 8 bodies and 24-shot film rolls">
+<meta property="og:url" content="https://hootchi.github.io/pangka/">
+<meta property="og:image" content="https://hootchi.github.io/pangka/img/banner.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="플래시를 터뜨리는 분홍색 디카 · A pink digicam firing its flash">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://hootchi.github.io/pangka/">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbf8f1; --fg: #1f2233; --muted: #5b5f73; --line: #e3dccb; --accent: #9a5b12; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1b1f3a; --fg: #eeeaf6; --muted: #b4b2c8; --line: #343a63; --accent: #ffd27a; --card: #232849; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { padding-bottom: 8px; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; word-break: keep-all; }
+  :lang(ko) { word-break: keep-all; }
+  h2 { font-size: 1.3rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul, ol { padding-left: 1.3em; }
+  ol > li + li { margin-top: 8px; }
+  a { color: var(--accent); }
+  .site { margin: 0 0 20px; }
+  .site a { font-weight: 600; text-decoration: none; }
+  .meta { color: var(--muted); margin: 0; }
+  .toc { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .toc a { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); text-decoration: none; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 24px; }
+  .card h2 { margin: 0; padding: 0; border: 0; }
+  .card ul { list-style: none; padding: 0; margin: 16px 0; }
+  .card li { margin: 8px 0; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  footer p { margin: 8px 0 0; }
+</style>
+<style>
+  .hero { margin: 0 0 8px; }
+  .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; border-radius: 16px; border: 1px solid var(--line); background: #fe8e16; }
+  .title { display: flex; align-items: center; gap: 14px; margin: 20px 0 8px; }
+  .title img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+  .title h1 { margin: 0; }
+  .title .en, .title .ja { display: block; font-size: 1.05rem; font-weight: 600; color: var(--muted); }
+  .pitch { font-size: 1.1rem; margin: 8px 0 0; }
+  .pitch + .pitch { margin-top: 2px; color: var(--muted); font-size: 1rem; }
+  .soon { display: inline-block; margin: 16px 0 0; padding: 4px 14px; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .cta a { display: inline-block; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-weight: 600; text-decoration: none; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 16px 0 0; padding: 0 0 8px; list-style: none; }
+  .shots li { flex: 0 0 auto; width: min(44%, 200px); margin: 0; scroll-snap-align: start; }
+  @media (min-width: 640px) { .shots li { width: calc((100% - 36px) / 4); } }
+  .shots img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 12px; border: 1px solid var(--line); background: #0a0a0c; }
+  .steps li strong { white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+<p class="site"><a href="../">Atto Studio</a></p>
+<header class="hero">
+  <img class="banner" src="img/banner.jpg" width="1024" height="500" alt="플래시를 터뜨리는 분홍색 디카 · A pink digicam firing its flash">
+  <div class="title">
+    <img src="img/icon.jpg" width="192" height="192" alt="">
+    <h1>팡카 - 플래시 디카 &amp; 필름 롤 <span class="en" lang="en">Pangka: Flash Digicam &amp; Roll</span> <span class="ja" lang="ja">パンカ - フラッシュデジカメ＆ロール</span></h1>
+  </div>
+  <p class="pitch">플래시 팡! 서랍 속 그 시절 디카를 폰 안으로.</p>
+  <p class="pitch" lang="en">Flash on. Your 2005 point-and-shoot, back in your pocket.</p>
+  <p class="soon">곧 출시 · <span lang="en">Coming soon</span> · <span lang="ja">まもなく公開</span></p>
+  <nav class="cta" aria-label="바로 가기 · Jump to">
+    <a href="#join">비공개 테스트 참여하기</a>
+    <a href="#join-en" lang="en">Join the closed test</a>
+    <a href="#join-ja" lang="ja">クローズドテストに参加</a>
+  </nav>
+  <nav class="toc" aria-label="Language"><a href="#korean">한국어</a><a href="#english" lang="en">English</a><a href="#japanese" lang="ja">日本語</a></nav>
+</header>
+
+<section id="korean">
+<h2>한국어</h2>
+<p>팡카는 바디를 고르면 카메라가 통째로 바뀌는 디카 카메라예요. 오늘 밤엔 롤 모드로 24컷을 찍고, 내일 아침 현상된 컨택트시트를 받아 보세요.</p>
+<ul>
+  <li><strong>바디 8종, 한 번 결제로 전부</strong>: 피치 05부터 파티 플래시, 나이트 800까지, 바디마다 색감뿐 아니라 플래시 광량, CCD 해상감, 입자, 블룸이 달라요. 바디를 바꾸면 카메라 섀시 색도 함께 바뀌어요.</li>
+  <li><strong>롤 모드, 아침에 현상</strong>: 24컷을 찍는 동안은 결과를 볼 수 없어요. 현상을 맡기면 아침 9시(급행은 1시간 뒤)에 알림이 오고, 번호가 찍힌 필름 컨택트시트가 완성돼요.</li>
+  <li><strong>주황 LED 날짜 스탬프</strong>: 7세그먼트 LED 그대로의 날짜 각인이에요. 날짜 형식을 바꾸거나 날짜를 직접 지정할 수도 있어요.</li>
+  <li><strong>앨범 사진도 팡카로</strong>: 사진을 불러와 8개 바디를 한 번에 비교하고, 강도를 조절해 저장해요. 날짜는 원본 촬영일로 찍혀요.</li>
+  <li>구독·광고·계정이 없어요. 팡카는 어떤 데이터도 수집하지 않고, 사진을 어디로도 보내지 않아요.</li>
+</ul>
+<ul class="shots" aria-label="앱 화면">
+  <li><img src="img/shot-ko-1.jpg" width="540" height="960" loading="lazy" alt="카메라 화면: 아래에서 바디를 고르면 카메라가 바뀌어요"></li>
+  <li><img src="img/shot-ko-2.jpg" width="540" height="960" loading="lazy" alt="롤 모드: 24컷을 찍는 동안은 결과를 볼 수 없어요"></li>
+  <li><img src="img/shot-ko-3.jpg" width="540" height="960" loading="lazy" alt="컨택트시트: 현상된 롤 한 통을 통째로 공유해요"></li>
+  <li><img src="img/shot-ko-4.jpg" width="540" height="960" loading="lazy" alt="앨범 사진 가져오기: 8개 바디를 한 번에 비교해요"></li>
+</ul>
+
+<h3 id="join">곧 출시돼요. 먼저 써 보고 싶다면</h3>
+<p>Android로 먼저 나오고, iPhone은 그 뒤에 나와요. 지금은 Android에서 비공개 테스트를 하고 있어요. 팡카는 유료 앱이지만, 테스트에 참여하는 분께 1회용 코드를 개인 메일로 보내 드려요. 이 코드로 무료로 설치할 수 있어요.</p>
+<ol class="steps">
+  <li><strong>테스터 그룹 가입</strong>: 휴대폰 Play 스토어에 로그인된 Google 계정으로 <a href="https://groups.google.com/g/pangka-testers">groups.google.com/g/pangka-testers</a>에 들어가 <strong>그룹 가입</strong>을 눌러 주세요(그룹 메일은 받지 않아도 돼요). 페이지 오른쪽 위 프로필 사진을 눌러 계정이 같은지 확인하고, 다르면 바꿔 주세요.</li>
+  <li><strong>테스트 참여</strong>: 휴대폰에서 <a href="https://play.google.com/apps/testing/com.attostudio.pangka">테스트 참여 페이지</a>를 열고, 같은 Google 계정으로 <strong>테스터 되기</strong>를 눌러 주세요(오른쪽 위 프로필 사진으로 한 번 더 확인해 주세요). 아직 설치(구매)는 하지 마세요. 3단계에서 코드를 먼저 넣어야 무료예요.</li>
+  <li><strong>코드 사용</strong>: Play 스토어 앱 → 오른쪽 위 프로필 → <strong>결제 및 정기 결제</strong> → <strong>코드 사용</strong>에 메일로 받은 코드를 입력해 주세요. 코드는 수량이 정해져 있어요. 1~2단계를 마쳤는데 코드 메일이 없으면 <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>으로 알려 주세요.</li>
+  <li><strong>설치</strong>: 테스트 참여 페이지에서 <strong>Google Play에서 다운로드</strong>를 눌러 팡카를 설치해 주세요. 테스트에 참여한 뒤 설치할 수 있게 되기까지 몇 분 걸릴 수 있어요. 결제 화면 없이 설치되면 성공이에요. 결제 화면이 나오면 결제하지 말고 메일로 알려 주세요.</li>
+</ol>
+<p>테스트가 끝났다고 알려 드릴 때까지(적어도 14일) 앱을 지우거나 테스트·테스터 그룹을 나가지 말아 주세요. 의견, 버그, 코드 관련 문의는 <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>으로 보내 주세요.</p>
+</section>
+
+<section id="english" lang="en">
+<h2>English</h2>
+<p>Pangka is a digicam camera where picking a body changes the whole camera. Shoot a 24-frame roll tonight and wake up to a developed contact sheet.</p>
+<ul>
+  <li><strong>8 bodies, one price</strong>: from Peach 05 to Party Flash and Night 800, each body has its own colour, flash falloff, sensor softness, grain and bloom. Switch bodies and the camera chassis changes colour too.</li>
+  <li><strong>Roll mode, developed by morning</strong>: 24 shots, no peeking while you shoot. Send the roll to develop and get a notification at 9 AM (or in an hour with express), then share a numbered 35mm contact sheet.</li>
+  <li><strong>Orange LED date stamp</strong>: a true seven-segment LED date back. Change the format or set any date.</li>
+  <li><strong>Bring your photos</strong>: import any photo, compare all 8 bodies at once, dial the intensity and save. The stamp uses the photo's original date.</li>
+  <li>No subscriptions, no ads, no accounts. Pangka collects no data and never sends your photos anywhere.</li>
+</ul>
+<ul class="shots" aria-label="Screenshots">
+  <li><img src="img/shot-en-1.jpg" width="540" height="960" loading="lazy" alt="The camera: pick a body at the bottom and the camera changes"></li>
+  <li><img src="img/shot-en-2.jpg" width="540" height="960" loading="lazy" alt="Roll mode: 24 frames, no peeking while you shoot"></li>
+  <li><img src="img/shot-en-3.jpg" width="540" height="960" loading="lazy" alt="A developed roll as a numbered contact sheet, ready to share"></li>
+  <li><img src="img/shot-en-4.jpg" width="540" height="960" loading="lazy" alt="An imported photo compared across all 8 bodies"></li>
+</ul>
+
+<h3 id="join-en">Coming soon. Want to try it first?</h3>
+<p>Pangka is coming to Android first, then iPhone. There's a closed test on Android right now. Pangka is a paid app, but we email a personal one-time code to testers taking part in the test, so you can install it free.</p>
+<ol class="steps">
+  <li><strong>Join the tester group</strong>: with the Google account your phone's Play Store is signed in with, open <a href="https://groups.google.com/g/pangka-testers">groups.google.com/g/pangka-testers</a> and tap <strong>Join group</strong> (you don't need to get group emails). Tap the profile picture at the top right of the page to check which account you're using, and switch if needed.</li>
+  <li><strong>Join the test</strong>: open the <a href="https://play.google.com/apps/testing/com.attostudio.pangka">test page</a> on your phone and tap <strong>Become a tester</strong> with the same Google account (check the profile picture at the top right again). Don't install (buy) it yet — redeem your code in step 3 first so it's free.</li>
+  <li><strong>Redeem your code</strong>: in the Play Store app, tap your profile icon (top right) → <strong>Payments &amp; subscriptions</strong> → <strong>Redeem code</strong> and enter the code from our email. Codes are limited. If you've finished steps 1–2 and no code email has arrived, write to <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>.</li>
+  <li><strong>Install</strong>: on the test page, tap <strong>Download it on Google Play</strong> and install Pangka. It can take a few minutes after you join the test before you can install it. If there's no payment screen, you're set. If you see one, don't pay — email us instead.</li>
+</ol>
+<p>Please keep the app installed, and don't leave the test or the tester group until we let you know the test is over (at least 14 days). Send feedback, bugs or questions about your code to <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>.</p>
+</section>
+
+<section id="japanese" lang="ja">
+<h2>日本語</h2>
+<p>パンカは、ボディを選ぶとカメラごと変わるデジカメアプリです。今夜はロールモードで24枚撮って、明日の朝、現像されたコンタクトシートを受け取りましょう。</p>
+<ul>
+  <li><strong>8つのボディ、一度の購入ですべて</strong>：ピーチ 05からパーティーフラッシュ、ナイト 800まで、色だけでなくフラッシュの光量、CCDの解像感、粒子、ブルームまでボディごとに違います。ボディを変えるとカメラのボディカラーも変わります。</li>
+  <li><strong>ロールモード、朝に現像</strong>：24枚、撮影中は結果を見られません。現像に出すと朝9時（特急なら1時間後）に通知が届き、番号入りのフィルムコンタクトシートが完成します。</li>
+  <li><strong>オレンジのLED日付スタンプ</strong>：7セグメントLEDそのままの日付です。形式の変更や日付の指定もできます。</li>
+  <li><strong>手持ちの写真もパンカに</strong>：写真を読み込んで8つのボディを一度に比較し、強さを調整して保存できます。日付は元の撮影日で入ります。</li>
+  <li>サブスク・広告・アカウントなし。データは一切収集せず、パンカが写真をどこかへ送ることもありません。</li>
+</ul>
+<ul class="shots" aria-label="スクリーンショット">
+  <li><img src="img/shot-ja-1.jpg" width="540" height="960" loading="lazy" alt="カメラ画面：下でボディを選ぶとカメラが変わります"></li>
+  <li><img src="img/shot-ja-2.jpg" width="540" height="960" loading="lazy" alt="ロールモード：24枚、撮影中は結果を見られません"></li>
+  <li><img src="img/shot-ja-3.jpg" width="540" height="960" loading="lazy" alt="現像したロールを番号入りのコンタクトシートで共有"></li>
+  <li><img src="img/shot-ja-4.jpg" width="540" height="960" loading="lazy" alt="読み込んだ写真を8つのボディで一度に比較"></li>
+</ul>
+
+<h3 id="join-ja">まもなく公開。先に試してみたい方へ</h3>
+<p>まずAndroidで公開し、iPhoneはその後の予定です。現在、Androidでクローズドテストを行っています。パンカは有料アプリですが、テストに参加する方には1回限りのコードを個別にメールでお送りします。このコードで無料でインストールできます。</p>
+<ol class="steps">
+  <li><strong>テスターグループに参加</strong>：スマートフォンのPlayストアにログインしているGoogleアカウントで<a href="https://groups.google.com/g/pangka-testers">groups.google.com/g/pangka-testers</a>を開き、<strong>グループに参加</strong>をタップしてください（グループのメールは受け取らなくても大丈夫です）。ページ右上のプロフィール写真をタップして同じアカウントか確認し、違う場合は切り替えてください。</li>
+  <li><strong>テストに参加</strong>：スマートフォンで<a href="https://play.google.com/apps/testing/com.attostudio.pangka">テスト参加ページ</a>を開き、同じGoogleアカウントで<strong>テスターになる</strong>をタップしてください（右上のプロフィール写真でもう一度確認してください）。まだインストール（購入）はしないでください。先に手順3でコードを入力すると無料になります。</li>
+  <li><strong>コードを利用</strong>：Playストアアプリ → 右上のプロフィールアイコン → <strong>お支払いと定期購入</strong> → <strong>コードを利用</strong>で、メールで届いたコードを入力してください。コードの数には限りがあります。手順1〜2を終えてもコードのメールが届かない場合は、<a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>までご連絡ください。</li>
+  <li><strong>インストール</strong>：テスト参加ページの<strong>Google Play でダウンロード</strong>をタップして、パンカをインストールしてください。テストに参加してからインストールできるようになるまで、数分かかることがあります。支払い画面が出なければ完了です。支払い画面が出た場合は、支払わずにメールでご連絡ください。</li>
+</ol>
+<p>テストの終了をお知らせするまで（少なくとも14日間）、アプリを削除したり、テストやテスターグループから抜けたりしないでください。ご意見、不具合、コードについてのお問い合わせは<a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>までお送りください。</p>
+</section>
+
+<footer>
+  <nav aria-label="Pangka"><a href="privacy/">Privacy Policy · 개인정보 처리방침 · <span lang="ja">プライバシー</span></a><a href="terms/">Terms of Use · 이용약관 · <span lang="ja">利用規約</span></a><a href="support/">Support · 고객 지원 · <span lang="ja">サポート</span></a></nav>
+  <p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+</footer>
+</main>
+</body>
+</html>
