@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>루미팡 · Lumi Pop</title>
+<meta name="description" content="루미팡: 아기 하늘다람쥐 루미와 빛 조각을 팡팡 맞추는 하늘섬 매치3 퍼즐, 강제 광고 없음. Lumi Pop, a sky-island match-3 puzzle with explosive combos and no forced ads. 곧 출시 · Coming soon.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atto Studio">
+<meta property="og:title" content="루미팡 · Lumi Pop">
+<meta property="og:description" content="팡팡 터지는 콤보, 강제 광고 없는 하늘섬 매치3 퍼즐 · A sky-island match-3 puzzle with explosive combos and no forced ads">
+<meta property="og:url" content="https://hootchi.github.io/lumipop/">
+<meta property="og:image" content="https://hootchi.github.io/lumipop/img/banner.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="루미팡: 하늘섬 빛 조각 매치3">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://hootchi.github.io/lumipop/">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fff6e8; --fg: #2b1838; --muted: #6b5a78; --line: #ecdcc4; --accent: #6a3fd1; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1d1840; --fg: #fff6e8; --muted: #c2b8d8; --line: #3a3170; --accent: #ffc23a; --card: #272057; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { padding-bottom: 8px; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; word-break: keep-all; }
+  :lang(ko) { word-break: keep-all; }
+  h2 { font-size: 1.3rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul, ol { padding-left: 1.3em; }
+  ol > li + li { margin-top: 8px; }
+  a { color: var(--accent); }
+  .site { margin: 0 0 20px; }
+  .site a { font-weight: 600; text-decoration: none; }
+  .meta { color: var(--muted); margin: 0; }
+  .toc { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .toc a { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); text-decoration: none; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 24px; }
+  .card h2 { margin: 0; padding: 0; border: 0; }
+  .card ul { list-style: none; padding: 0; margin: 16px 0; }
+  .card li { margin: 8px 0; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  footer p { margin: 8px 0 0; }
+</style>
+<style>
+  .hero { margin: 0 0 8px; }
+  .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; border-radius: 16px; border: 1px solid var(--line); background: #1d1840; }
+  .title { display: flex; align-items: center; gap: 14px; margin: 20px 0 8px; }
+  .title img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+  .title h1 { margin: 0; }
+  .title .en { display: block; font-size: 1.05rem; font-weight: 600; color: var(--muted); }
+  .pitch { font-size: 1.1rem; margin: 8px 0 0; }
+  .pitch + .pitch { margin-top: 2px; color: var(--muted); font-size: 1rem; }
+  .soon { display: inline-block; margin: 16px 0 0; padding: 4px 14px; border-radius: 999px; background: var(--accent); color: var(--bg); font-weight: 700; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .cta a { display: inline-block; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-weight: 600; text-decoration: none; }
+  .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 16px 0 0; padding: 0 0 8px; list-style: none; }
+  .shots li { flex: 0 0 auto; width: min(80%, 320px); margin: 0; scroll-snap-align: start; }
+  @media (min-width: 640px) { .shots { flex-wrap: wrap; } .shots li { width: calc((100% - 12px) / 2); } }
+  .shots img { display: block; width: 100%; height: auto; aspect-ratio: 540 / 304; border-radius: 12px; border: 1px solid var(--line); background: #1d1840; }
+  .steps li strong { white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+<p class="site"><a href="../">Atto Studio</a></p>
+<header class="hero">
+  <img class="banner" src="img/banner.jpg" width="1024" height="500" alt="루미팡: 하늘섬 빛 조각 매치3">
+  <div class="title">
+    <img src="img/icon.jpg" width="192" height="192" alt="">
+    <h1>루미팡 <span class="en" lang="en">Lumi Pop</span></h1>
+  </div>
+  <p class="pitch">스와이프 한 번에 화면 가득 팡팡! 강제 광고 없는 오프라인 매치3 퍼즐이에요.</p>
+  <p class="pitch" lang="en">Swipe, match and blast! Explosive combos, no forced ads, play offline.</p>
+  <p class="soon">곧 출시 · <span lang="en">Coming soon</span></p>
+  <nav class="cta" aria-label="바로 가기 · Jump to">
+    <a href="#join">비공개 테스트 참여하기</a>
+    <a href="#join-en" lang="en">Join the closed test</a>
+  </nav>
+  <nav class="toc" aria-label="Language"><a href="#korean">한국어</a><a href="#english" lang="en">English</a></nav>
+</header>
+
+<section id="korean">
+<h2>한국어</h2>
+<p>아기 하늘다람쥐 루미와 함께 흩어진 빛 조각을 팡팡 맞추고, 빛을 잃은 하늘섬을 다시 밝혀 주세요! 연쇄가 길어질수록 연출이 빨라지고, 한 단계마다 음이 올라가고, 보드 가득 빛이 터져요.</p>
+<ul>
+  <li><strong>화끈한 스페셜과 콤보</strong>: 4개를 한 줄로 맞추면 빛 화살, L자·T자로는 풍등, 5개를 한 줄로는 프리즘, 네모로 4개는 반딧불이 만들어져요. 스페셜 두 개를 바꾸면 10가지 콤보가 터져요.</li>
+  <li><strong>팡 게이지와 팡파레 타임</strong>: 연쇄를 이어 팡 게이지를 채우면 팡팡 타임! 빛 조각이 공짜 스페셜로 변신해요. 레벨을 깨면 팡파레 타임이 시작돼요. 남은 이동이 모두 빛 화살과 풍등이 되어 터져요.</li>
+  <li><strong>하늘섬 모험</strong>: 새벽·한낮·노을·별밤 하늘섬, 4개 월드 200레벨. 그림자를 걷고, 구름을 치우고, 비눗방울을 터뜨리고, 도토리를 내려 주세요.</li>
+  <li><strong>강제 광고 0</strong>: 배너 광고도, 레벨 사이 광고도, 게임을 열 때 나오는 광고도 없어요. 보상형 광고는 '광고 보고' 버튼을 직접 눌렀을 때만 나와요.</li>
+  <li>계정도 가입도 없이 오프라인으로 즐기는 무료 게임이에요. 선택형 인앱 구매가 있고, 일부 보상은 원할 때만 보는 보상형 광고로 받을 수 있어요.</li>
+</ul>
+<ul class="shots" aria-label="게임 화면">
+  <li><img src="img/shot-ko-1.jpg" width="540" height="304" loading="lazy" alt="홈 화면: 루미와 함께 하늘섬에 빛을 되찾아 줘요"></li>
+  <li><img src="img/shot-ko-2.jpg" width="540" height="304" loading="lazy" alt="프리즘: 한 색의 빛 조각을 한 번에 싹 지워요"></li>
+  <li><img src="img/shot-ko-3.jpg" width="540" height="304" loading="lazy" alt="콤보: 빛 화살과 풍등을 합치면 십자로 크게 터져요"></li>
+  <li><img src="img/shot-ko-4.jpg" width="540" height="304" loading="lazy" alt="레벨 시작 카드: 광고는 보라색 버튼을 직접 누를 때만 나와요"></li>
+</ul>
+
+<h3 id="join">곧 출시돼요. 먼저 해 보고 싶다면</h3>
+<p>iPhone·iPad·Android로 곧 나와요. 지금은 Google Play에서 비공개 테스트를 하고 있어요(Android만). 두 단계로 참여할 수 있어요.</p>
+<ol class="steps">
+  <li><strong>테스터 그룹 가입</strong>: <a href="https://groups.google.com/g/lumipop-testers">groups.google.com/g/lumipop-testers</a>에서 '그룹 가입'을 누르세요. 휴대폰 Play 스토어에 로그인된 Google 계정으로 가입해 주세요. 그룹에 글이 보이지 않아도 정상이에요.</li>
+  <li><strong>테스트 참여</strong>: 그룹 가입만으로는 설치할 수 없어요. 같은 계정으로 <a href="https://play.google.com/apps/testing/com.attostudio.lumipop">테스트 참여 페이지</a>를 열어 '테스터 되기'를 누른 뒤, 그 페이지의 'Google Play에서 다운로드'를 눌러 루미팡을 설치하세요. 테스트에 참여한 뒤 설치할 수 있게 되기까지 몇 분 걸릴 수 있어요.</li>
+</ol>
+<p>테스트가 끝났다고 알려 드릴 때까지(최소 14일) 게임을 지우거나 테스트·테스터 그룹을 나가지 말아 주세요. 그 뒤에는 그룹을 나가고, 같은 테스트 참여 페이지에서 테스트도 나갈 수 있어요. 의견이나 버그는 언제든 <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>으로 보내 주세요.</p>
+<p>테스터 그룹의 회원 목록(Google 계정 이메일 주소가 보여요)은 저희 Atto Studio만 볼 수 있고, 이 테스트를 운영하는 데만 써요.</p>
+</section>
+
+<section id="english" lang="en">
+<h2>English</h2>
+<p>Match scattered pieces of light with Lumi, a baby sugar glider, and bring the light back to the sky islands! Chain reactions speed up as they grow, every step of a chain climbs the musical scale, and the board bursts with light.</p>
+<ul>
+  <li><strong>Explosive specials and combos</strong>: match 4 in a row for a Light Arrow, an L or T for a Sky Lantern, 5 in a row for a Prism and a 2×2 square for a Firefly. Swap two specials together for 10 different combos.</li>
+  <li><strong>Pop meter and Fanfare Time</strong>: keep the chains going to fill the Pop meter. When it's full, Pop Time turns pieces into free specials. Clear a level and Fanfare Time begins: every move you have left goes off as a Light Arrow or Sky Lantern.</li>
+  <li><strong>A sky-island adventure</strong>: 200 levels across four worlds, the Dawn, Noon, Sunset and Starlight Isles. Lift shadows, clear clouds, pop bubbles and bring the acorns down.</li>
+  <li><strong>No forced ads</strong>: no banner ads, no ads between levels, no ads when you open the game. Rewarded videos play only when you tap a "Watch ad" button.</li>
+  <li>Free to play, offline, no account. Optional in-app purchases, and some rewards can be earned by watching an optional rewarded video.</li>
+</ul>
+<ul class="shots" aria-label="Screenshots">
+  <li><img src="img/shot-en-1.jpg" width="540" height="304" loading="lazy" alt="The home screen: bring the light back to the sky islands with Lumi"></li>
+  <li><img src="img/shot-en-2.jpg" width="540" height="304" loading="lazy" alt="A Prism clearing every piece of one color at once"></li>
+  <li><img src="img/shot-en-3.jpg" width="540" height="304" loading="lazy" alt="A combo: a Light Arrow and a Sky Lantern make a giant cross blast"></li>
+  <li><img src="img/shot-en-4.jpg" width="540" height="304" loading="lazy" alt="The level start card: an ad plays only when you tap the violet button"></li>
+</ul>
+
+<h3 id="join-en">Coming soon. Want to play it first?</h3>
+<p>Lumi Pop is coming to iPhone, iPad and Android. Right now it's in a closed test on Google Play (Android only), and joining takes two steps.</p>
+<ol class="steps">
+  <li><strong>Join the tester group</strong>: tap "Join group" at <a href="https://groups.google.com/g/lumipop-testers">groups.google.com/g/lumipop-testers</a>. Use the Google account your phone's Play Store is signed in with. You won't see any posts in the group — that's expected.</li>
+  <li><strong>Join the test</strong>: joining the group alone isn't enough. With that same account, open the <a href="https://play.google.com/apps/testing/com.attostudio.lumipop">test page</a> and tap "Become a tester". Then tap "Download it on Google Play" on that page and install Lumi Pop. It can take a few minutes after you join the test before you can install it.</li>
+</ol>
+<p>Please keep the game installed, and don't leave the test or the tester group until we let you know the test is over (at least 14 days). After that, you can leave the group, and you can leave the test from the same test page. Send feedback or bugs any time to <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>.</p>
+<p>Only Atto Studio can see the group's member list, which shows your Google account's email address, and we use it only to run this test.</p>
+</section>
+
+<footer>
+  <nav aria-label="Lumi Pop"><a href="privacy/">Privacy Policy · 개인정보 처리방침</a><a href="terms/">Terms of Use · 이용약관</a><a href="support/">Support · 고객 지원</a></nav>
+  <p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+</footer>
+</main>
+</body>
+</html>
