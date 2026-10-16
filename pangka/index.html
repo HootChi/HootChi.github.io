@@ -35,7 +35,7 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-to
 body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif; }
 main { width: min(100%, 980px); margin: 0 auto; padding: 24px 24px 64px; }
 h1,h2,h3,h4,p,ul,ol,dl { margin-top: 0; }
-h1,h2,h3,h4 { line-height: 1.4; word-break: keep-all; }
+h1,h2,h3,h4 { line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
 h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0; }
 h2 { font-size: 1.5rem; margin-bottom: 0; }
 h3 { font-size: 1.28rem; margin-bottom: 18px; }
@@ -52,7 +52,8 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024/500; border: 1px solid var(--line); border-radius: 20px; }
 .title { display: flex; gap: 16px; align-items: center; margin: 28px 0 16px; }
 .title img { width: 72px; height: 72px; flex: none; border-radius: 18px; }
-.title .en { display: block; margin-top: 4px; color: var(--muted); font-size: 1.05rem; font-weight: 600; }
+.title h1 { min-width: 0; }
+.title .en,.title .ja { display: block; margin-top: 4px; color: var(--muted); font-size: 1.05rem; font-weight: 600; }
 .pitch { font-size: 1.05rem; margin-bottom: 6px; }
 .pitch + .pitch { color: var(--muted); font-size: .97rem; }
 .platform-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
@@ -63,7 +64,7 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .platform-card .button { margin-top: auto; }
 .status { display: inline-block; padding: 3px 10px; border-radius: 6px; background: var(--tint); color: var(--accent); font-size: .85rem; font-weight: 700; }
 .status.testing { color: var(--muted); background: var(--bg); border: 1px solid var(--line); }
-.button { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--bg); font-size: .95rem; font-weight: 700; text-align: center; text-decoration: none; }
+.button { display: inline-flex; justify-content: center; align-items: center; min-width: 0; max-width: 100%; min-height: 44px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--bg); font-size: .95rem; font-weight: 700; text-align: center; text-decoration: none; overflow-wrap: anywhere; }
 .button.secondary { background: var(--card); color: var(--accent); border-color: var(--line); }
 .button:hover { filter: brightness(.94); }
 .language-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 24px 0; margin: 12px 0 0; }
