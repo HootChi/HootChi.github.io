@@ -1,10 +1,15 @@
 {
   "name": "Folded Days",
   "name_ko": "접어둔 하루",
-  "summary": "A one-page-a-day diary you fold into a glass bottle, for iPhone and Android.",
-  "summary_ko": "하루 한 장 쓴 일기를 접어 유리병에 모으는 iPhone·Android 앱입니다.",
+  "summary": "Fold little diary notes into a glass jar. Available on the App Store for iPhone; Android is in closed testing.",
+  "summary_ko": "작은 일기를 접어 유리병에 모아요. iPhone App Store 출시 · Android 비공개 테스트 중입니다.",
   "since": "2026-10-04",
   "links": [
+    {
+      "label": "Download on the App Store",
+      "label_ko": "App Store에서 다운로드",
+      "href": "https://apps.apple.com/app/id6821342922"
+    },
     {
       "label": "About the app",
       "label_ko": "앱 소개",
