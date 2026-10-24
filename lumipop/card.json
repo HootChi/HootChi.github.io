@@ -1,11 +1,13 @@
 {
   "name": "Lumi Pop",
   "name_ko": "루미팡",
-  "summary": "A match-3 puzzle game for iPhone, iPad and Android.",
-  "summary_ko": "iPhone·iPad·Android용 매치3 퍼즐 게임입니다.",
+  "summary": "Light up the sky islands with Lumi in a match-3 puzzle. Available on the App Store; Android is in closed testing.",
+  "summary_ko": "루미와 빛 조각을 맞추며 하늘섬을 밝혀요. App Store 출시 · Android 비공개 테스트 중입니다.",
   "since": "2026-10-08",
   "links": [
+    { "label": "App Store", "href": "https://apps.apple.com/app/id6821343149" },
     { "label": "About the game", "label_ko": "게임 소개", "href": "index.html" },
+    { "label": "Android test guide", "label_ko": "Android 테스트 안내", "href": "index.html#join" },
     { "label": "Privacy Policy", "label_ko": "개인정보 처리방침", "href": "privacy/" },
     { "label": "Terms of Use", "label_ko": "이용약관", "href": "terms/" },
     { "label": "Support", "label_ko": "고객 지원", "href": "support/" }

@@ -7,13 +7,17 @@
   "links": [
     {
       "label": "App Store",
-      "label_ko": "App Store",
-      "href": "https://apps.apple.com/kr/app/id6821342800"
+      "href": "https://apps.apple.com/app/id6821342800"
     },
     {
       "label": "About the app",
       "label_ko": "앱 소개",
       "href": "index.html"
+    },
+    {
+      "label": "Android test guide",
+      "label_ko": "Android 테스트 안내",
+      "href": "index.html#join"
     },
     {
       "label": "Privacy Policy",

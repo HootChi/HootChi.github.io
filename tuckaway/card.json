@@ -5,8 +5,9 @@
   "summary_ko": "iPhone·iPad App Store에 출시된 논리 퍼즐 게임입니다. Android는 비공개 테스트 중입니다.",
   "since": "2026-09-29",
   "links": [
-    { "label": "App Store", "label_ko": "App Store", "href": "https://apps.apple.com/app/id6821342548" },
+    { "label": "App Store", "href": "https://apps.apple.com/app/id6821342548" },
     { "label": "About the game", "label_ko": "게임 소개", "href": "index.html" },
+    { "label": "Android test guide", "label_ko": "Android 테스트 안내", "href": "index.html#join" },
     { "label": "Privacy Policy", "label_ko": "개인정보 처리방침", "href": "privacy/" },
     { "label": "Terms of Use", "label_ko": "이용약관", "href": "terms/" },
     { "label": "Support", "label_ko": "고객 지원", "href": "support/" }
