@@ -1,0 +1,25 @@
+{
+  "name": "Tuckaway Garden: Nonogram",
+  "name_ko": "쉿! 숲속 정원: 노노그램",
+  "summary": "A quiet garden of nonogram puzzles. Preparing for iOS release.",
+  "summary_ko": "숫자로 그림을 완성하고 정원을 가꾸는 노노그램입니다. iOS 출시 준비 중입니다.",
+  "since": "2026-10-25",
+  "links": [
+    {
+      "label": "About the game",
+      "label_ko": "게임 소개",
+      "href": "index.html"
+    },
+    {
+      "label": "Privacy Policy",
+      "label_ko": "개인정보 처리방침",
+      "href": "privacy/"
+    },
+    {
+      "label": "Support",
+      "label_ko": "고객 지원",
+      "href": "support/"
+    }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>쉿! 숲속 정원 · Tuckaway Garden: Nonogram</title>
+<meta name="description" content="숫자 힌트로 그림을 완성하고 정원을 가꾸는 노노그램. iOS 출시 준비 중. Tuckaway Garden: Nonogram, a garden of logic puzzles. Preparing for iOS release.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Atto Studio"><meta property="og:title" content="쉿! 숲속 정원 · Tuckaway Garden: Nonogram"><meta property="og:description" content="iOS 출시 준비 중 · 목숨 제한 없이 가꾸는 논리 정원">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f8f7f2; --card: #fff; --fg: #213b32; --muted: #59675f;
+  --line: #dce3db; --accent: #29604a; --tint: #edf4ed; --notice: #fff8e7;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #15231e; --card: #1d3027; --fg: #edf2e9; --muted: #b6c5ba; --line: #385044; --accent: #b8dfc5; --tint: #273f32; --notice: #3b3424; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif; }
+main { width: min(100%, 980px); margin: 0 auto; padding: 24px 24px 64px; }
+h1,h2,h3,h4,p,ul,ol,dl { margin-top: 0; }
+h1,h2,h3,h4 { line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0; }
+h2 { font-size: 1.5rem; margin-bottom: 0; }
+h3 { font-size: 1.28rem; margin-bottom: 18px; }
+h4 { font-size: 1.05rem; margin-bottom: 10px; }
+p { margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+p,li,dd { overflow-wrap: anywhere; }
+:lang(ko),:lang(ja) { word-break: keep-all; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+[id] { scroll-margin-top: 24px; }
+.site { margin-bottom: 20px; font-weight: 700; }
+.site a { text-decoration: none; }
+.banner { display: block; width: 100%; height: auto; aspect-ratio: 1536/1024; border: 1px solid var(--line); border-radius: 20px; }
+.title { display: flex; gap: 16px; align-items: center; margin: 28px 0 16px; }
+.title img { width: 72px; height: 72px; flex: none; border-radius: 18px; }
+.title h1 { min-width: 0; }
+.title .en,.title .ja { display: block; margin-top: 4px; color: var(--muted); font-size: 1.05rem; font-weight: 600; }
+.pitch { font-size: 1.05rem; margin-bottom: 6px; }
+.pitch + .pitch { color: var(--muted); font-size: .97rem; }
+.platform-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.hero-platforms { margin-top: 28px; }
+.platform-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; border: 1px solid var(--line); border-radius: 16px; padding: 22px; background: var(--card); }
+.platform-card h2,.platform-card h4,.platform-card p { margin: 0; }
+.platform-card h2 { font-size: 1.1rem; }
+.platform-card .button { margin-top: auto; }
+.status { display: inline-block; padding: 3px 10px; border-radius: 6px; background: var(--tint); color: var(--accent); font-size: .85rem; font-weight: 700; }
+.status.testing { color: var(--muted); background: var(--bg); border: 1px solid var(--line); }
+.button { display: inline-flex; justify-content: center; align-items: center; min-width: 0; max-width: 100%; min-height: 44px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--bg); font-size: .95rem; font-weight: 700; text-align: center; text-decoration: none; overflow-wrap: anywhere; }
+.button.secondary { background: var(--card); color: var(--accent); border-color: var(--line); }
+.button:hover { filter: brightness(.94); }
+.language-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 24px 0; margin: 12px 0 0; }
+.language-nav a { display: inline-block; min-height: 42px; padding: 6px 18px; border: 1px solid var(--line); border-radius: 99px; background: var(--card); text-decoration: none; font-weight: 600; }
+.language-section { margin-top: 32px; }
+.language-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 2px solid var(--accent); }
+.language-heading>a { font-size: .85rem; flex: none; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 16px 0 24px; font-size: .9rem; }
+.content-block { margin-bottom: 32px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.features { padding-left: 1.2em; margin-bottom: 0; }
+.features li+li { margin-top: 16px; }
+.muted { color: var(--muted); font-size: .9rem; }
+.shots { display: flex; gap: 16px; list-style: none; padding: 0 0 12px; margin: 0; overflow-x: auto; scroll-snap-type: x mandatory; }
+.shots li { flex: 0 0 calc((100% - 48px)/4); min-width: 0; scroll-snap-align: start; }
+.shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; }
+.shots.landscape { flex-wrap: wrap; }
+.shots.landscape li { flex-basis: calc((100% - 16px)/2); }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: .9rem; margin-bottom: 0; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+.section-heading { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.section-heading h3 { margin: 0; }
+.android-test { border-color: var(--accent); }
+.notice { padding: 18px 20px; background: var(--tint); border-radius: 12px; margin: 20px 0; }
+.notice h4 { font-size: 1rem; }
+.notice p { font-size: .95rem; }
+.notice.payment { background: var(--notice); }
+.test-steps { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; list-style: none; padding: 0; margin: 24px 0; counter-reset: step; }
+.test-steps>li { position: relative; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.step-number { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-bottom: 12px; border-radius: 50%; color: var(--bg); background: var(--accent); font-weight: 700; }
+.test-steps p { font-size: .95rem; }
+.test-steps .button { width: 100%; }
+.test-steps .muted { margin-top: 12px; font-size: .8rem; }
+.test-notes { padding-top: 4px; color: var(--muted); font-size: .9rem; }
+.test-notes h4 { color: var(--fg); font-size: .95rem; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+footer { padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer p { margin: 16px 0 0; }
+@media(max-width: 640px) {
+  main { padding: 18px 16px 48px; }
+  .banner { border-radius: 14px; }
+  .title { margin-top: 22px; gap: 12px; }
+  .title img { width: 60px; height: 60px; border-radius: 14px; }
+  .platform-grid,.test-steps { grid-template-columns: 1fr; }
+  .platform-card,.content-block { padding: 20px; }
+  .content-block { border-radius: 14px; margin-bottom: 24px; }
+  .platform-card .button { width: 100%; }
+  .language-heading { align-items: flex-start; }
+  .section-nav { gap: 8px 16px; }
+  .shots li { flex-basis: 60%; }
+  .shots.landscape { flex-wrap: nowrap; }
+  .shots.landscape li { flex-basis: 90%; }
+  .notice { padding: 16px; }
+  .test-steps>li { padding: 18px; }
+  dl { grid-template-columns: 1fr; gap: 0; }
+  dd { margin-bottom: 8px; }
+}
+
+
+/* Studio layout with keyboard access and four-language navigation. */
+.skip{position:absolute;left:12px;top:0;transform:translateY(-200%);padding:8px 12px;background:var(--card);z-index:2}.skip:focus{transform:none}
+.language-nav a,.toc a,.back{min-height:44px}.back{display:inline-flex;align-items:center;margin-top:16px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+
+.banner{object-fit:cover;object-position:center 45%}.shots figure{margin:0}.shots figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}.shots img{aspect-ratio:360/900;object-fit:cover;object-position:top}.shots li{flex-basis:calc((100% - 16px)/2);max-width:250px}.shot-pending{margin-top:16px}.section-nav a{display:inline-flex;align-items:center;min-height:44px}.site a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:640px){.shots li{flex-basis:72%;max-width:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content / 본문으로 / 本文へ / 跳至內容</a>
+<main id="main">
+<p class="site"><a href="https://hootchi.github.io/" rel="noreferrer">← Atto Studio</a></p>
+<header class="hero" id="top"><img class="banner" src="img/banner.png" width="1536" height="1024" alt="숲속 하숙집 뒤뜰의 정원 · The garden behind the forest boarding house"><div class="title"><img src="img/icon.png" width="1024" height="1024" alt=""><h1>쉿! 숲속 정원<span class="en" lang="en">Tuckaway Garden: Nonogram</span></h1></div><p class="pitch">숫자를 따라 그림 하나씩, 작은 정원을 가꿔요. 목숨 제한 없이 즐기는 논리 퍼즐이에요.</p><p class="pitch" lang="en">A little picture, a growing garden. Logic puzzles without lives or energy limits.</p><div class="platform-grid hero-platforms" aria-label="출시 상태 · Release status"><article class="platform-card"><h2>iPhone · iPad</h2><p class="status">iOS 출시 준비 중 · Preparing for release</p><a class="button" href="#download">출시 준비 안내 · Release information</a></article><article class="platform-card"><h2>Android</h2><p class="status testing">출시 대기 · Release pending</p><a class="button secondary" href="#join">테스트 상태 · Test status</a></article></div><nav class="language-nav" aria-label="Language"><a href="#korean" lang="ko">한국어</a><a href="#english" lang="en">English</a><a href="#japanese" lang="ja">日本語</a><a href="#chinese" lang="zh-TW">繁體中文</a></nav></header>
+<section id="korean" lang="ko" class="language-section"><div class="language-heading"><h2>한국어</h2><a href="#top">맨 위로 ↑</a></div><nav class="section-nav" aria-label="페이지 안내"><a href="#about">앱 소개</a><a href="#features">주요 기능</a><a href="#screenshots">스크린샷</a><a href="#download">출시 및 다운로드</a><a href="#join">테스트 상태</a><a href="#contact">문의 및 지원</a></nav>
+<div class="content-block" id="about" data-section="about"><h3>앱 소개</h3><p class="muted">쉿! 숲속 정원: 노노그램</p><p>숫자를 따라 칸을 칠하면 작은 그림이 완성되고, 숲속 하숙집 뒤뜰의 정원이 자라나요. 추측 없이 논리로 풀고, 원하는 속도로 쉬어 가세요.</p></div>
+<div class="content-block" id="features" data-section="features"><h3>주요 기능</h3><ul class="features"><li><strong>목숨·에너지 제한 없이</strong>: 한 판을 천천히 풀거나, 쉬었다가 저장한 퍼즐을 이어 갈 수 있어요.</li>
+<li><strong>이유를 알려 주는 3단계 힌트</strong>: 풀 수 있는 줄을 찾고, 이유를 확인한 뒤, 확실한 한 칸에 칠하기나 X를 표시해요.</li>
+<li><strong>1,140개의 퍼즐</strong>: 모험 120판, 오늘의 정원 120판, 자유 퍼즐 900판. 5×5·10×10·15×15와 편한·도전 모드를 즐겨요.</li>
+<li><strong>한 칸씩 자라는 정원</strong>: 5개 구역에서 그림을 모으고, 도감의 색을 바꾸며 숲속 하숙생을 맞이해요.</li>
+<li><strong>가입 없이 오프라인으로</strong>: 기본 퍼즐은 오프라인으로 즐겨요. 광고와 선택형 인앱 구매가 있으며 광고·구매·복원에는 인터넷이 필요해요.</li></ul></div>
+<div class="content-block" id="screenshots" data-section="screenshots"><h3>스크린샷</h3><ul class="shots" aria-label="스크린샷"><li><figure><img src="img/home.png" width="360" height="1225" loading="lazy" alt="그림 하나씩 정원을 가꾸는 홈 화면"><figcaption>그림 하나씩 정원을 가꾸는 홈 화면</figcaption></figure></li><li><figure><img src="img/puzzle.png" width="360" height="900" loading="lazy" alt="큰 칸으로 한 줄씩 살펴보는 15×15 퍼즐"><figcaption>큰 칸으로 한 줄씩 살펴보는 15×15 퍼즐</figcaption></figure></li></ul><p class="muted shot-pending">정원·도감의 추가 화면은 준비 중이에요.</p></div>
+<div class="content-block" id="download" data-section="download"><h3>출시 및 다운로드</h3><div class="platform-grid"><article class="platform-card"><h4>iPhone · iPad</h4><p class="status">iOS 출시 준비 중</p><dl><dt>지원 언어</dt><dd>영어 · 한국어 · 일본어 · 번체 중국어</dd><dt>가격 및 결제</dt><dd>기본 무료 · 광고 및 선택형 인앱 구매</dd></dl><p>아직 다운로드 링크가 제공되지 않아요. 정식 출시 후 이곳에서 안내할게요.</p><p class="muted">출시 후 현지가격은 스토어의 표시와 구매 확인 화면에서 확인해 주세요.</p><p class="muted">iOS는 판매 가능한 전 세계에서 중국 본토를 제외하고 출시할 예정이에요. 실제 이용 가능 여부는 해당 지역 App Store에서 확인해 주세요.</p></article><article class="platform-card"><h4>Android</h4><p class="status testing">출시 대기</p><p>Android용은 준비 중이며 아직 테스트 참여나 설치 링크를 제공하지 않아요.</p><a class="button secondary" href="#join">테스트 상태 확인</a></article></div></div>
+<div class="content-block android-test" id="join" data-section="android-test"><div class="section-heading"><h3>테스트 상태</h3><span class="status testing">출시 대기</span></div><p>현재 공개 테스트를 모집하지 않아요. 참여가 열리면 이곳에 정확한 안내를 추가할게요.</p><aside class="notice"><h4>테스트 안내</h4><p>Android용은 준비 중이며 아직 테스트 참여나 설치 링크를 제공하지 않아요.</p></aside></div>
+<div class="content-block" id="contact" data-section="support"><h3>문의 및 지원</h3><p>사용 방법과 자주 묻는 질문은 고객 지원에서 확인하세요. 오류나 문의는 지원 메일로 보내 주세요.</p><div class="actions"><a class="button secondary" href="support/index.html#korean">고객 지원 및 FAQ</a><a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></div></div></section>
+<section id="english" lang="en" class="language-section"><div class="language-heading"><h2>English</h2><a href="#top">Back to top ↑</a></div><nav class="section-nav" aria-label="On this page"><a href="#about-en">About the app</a><a href="#features-en">Key features</a><a href="#screenshots-en">Screenshots</a><a href="#download-en">Release and download</a><a href="#join-en">Test status</a><a href="#contact-en">Contact and support</a></nav>
+<div class="content-block" id="about-en" data-section="about"><h3>About the app</h3><p class="muted">Tuckaway Garden: Nonogram</p><p>Follow the numbers to reveal little pictures and grow the garden behind the forest boarding house. Solve with logic, without guessing, and take a break whenever you like.</p></div>
+<div class="content-block" id="features-en" data-section="features"><h3>Key features</h3><ul class="features"><li><strong>No lives or energy limits</strong>: Take your time, step away and return to your saved puzzle.</li>
+<li><strong>Three-stage hints that explain why</strong>: Find a useful line, understand the reason, then mark one certain cell as filled or empty.</li>
+<li><strong>1,140 puzzles</strong>: 120 Adventure, 120 Daily and 900 Classic puzzles, with 5×5, 10×10 and 15×15 grids and comfortable or challenge play.</li>
+<li><strong>A garden, one picture at a time</strong>: Collect pictures across five zones, tint your collection and welcome forest visitors.</li>
+<li><strong>Offline, without an account</strong>: Core puzzles work offline. Ads and optional in-app purchases are included; ads, purchases and restoration need internet access.</li></ul></div>
+<div class="content-block" id="screenshots-en" data-section="screenshots"><h3>Screenshots</h3><ul class="shots" aria-label="Screenshots"><li><figure><img src="img/home.png" width="360" height="1225" loading="lazy" alt="A home for your growing picture garden"><figcaption>A home for your growing picture garden</figcaption></figure></li><li><figure><img src="img/puzzle.png" width="360" height="900" loading="lazy" alt="Larger cells for one line of a 15×15 puzzle"><figcaption>Larger cells for one line of a 15×15 puzzle</figcaption></figure></li></ul><p class="muted shot-pending">More garden and collection screens are being prepared.</p></div>
+<div class="content-block" id="download-en" data-section="download"><h3>Release and download</h3><div class="platform-grid"><article class="platform-card"><h4>iPhone · iPad</h4><p class="status">Preparing for iOS release</p><dl><dt>Languages</dt><dd>English · Korean · Japanese · Traditional Chinese</dd><dt>Pricing</dt><dd>Free app · ads and optional in-app purchases</dd></dl><p>A download link is not available yet. Release information will appear here when the app is available.</p><p class="muted">After release, check your store’s localized price and purchase confirmation.</p><p class="muted">iOS is planned for all available countries and regions except mainland China. Check your regional App Store for availability after release.</p></article><article class="platform-card"><h4>Android</h4><p class="status testing">Release pending</p><p>The Android version is being prepared. Test signup and installation links are not available yet.</p><a class="button secondary" href="#join-en">Check test status</a></article></div></div>
+<div class="content-block android-test" id="join-en" data-section="android-test"><div class="section-heading"><h3>Test status</h3><span class="status testing">Release pending</span></div><p>Public testing is not open. Instructions will be added here when participation becomes available.</p><aside class="notice"><h4>Test information</h4><p>The Android version is being prepared. Test signup and installation links are not available yet.</p></aside></div>
+<div class="content-block" id="contact-en" data-section="support"><h3>Contact and support</h3><p>Visit support for instructions and frequently asked questions. Email us about a bug or anything you need help with.</p><div class="actions"><a class="button secondary" href="support/index.html#english">Support and FAQ</a><a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></div></div></section>
+<section id="japanese" lang="ja" class="language-section"><div class="language-heading"><h2>日本語</h2><a href="#top">ページの先頭へ ↑</a></div><nav class="section-nav" aria-label="ページ案内"><a href="#about-ja">アプリ紹介</a><a href="#features-ja">主な機能</a><a href="#screenshots-ja">スクリーンショット</a><a href="#download-ja">リリース・ダウンロード</a><a href="#join-ja">テスト状況</a><a href="#contact-ja">お問い合わせ</a></nav>
+<div class="content-block" id="about-ja" data-section="about"><h3>アプリ紹介</h3><p class="muted">しーっ！森のおにわ：ノノグラム</p><p>数字に合わせてマスをぬると小さな絵が現れ、森の下宿の裏庭が育ちます。推測に頼らず論理で解いて、好きなときにひとやすみ。</p></div>
+<div class="content-block" id="features-ja" data-section="features"><h3>主な機能</h3><ul class="features"><li><strong>ライフ・スタミナ制限なし</strong>: ゆっくり解いても大丈夫。途中で休んでも、保存したパズルから再開できます。</li>
+<li><strong>理由がわかる3段階のヒント</strong>: 役立つ行や列を見つけ、理由を確認し、確定した1マスにぬりや×を記入します。</li>
+<li><strong>1,140問のパズル</strong>: 冒険120問、デイリー120問、フリー900問。5×5・10×10・15×15の盤面と、のんびり・チャレンジの遊び方。</li>
+<li><strong>絵を集めて育つおにわ</strong>: 5つのエリアで絵を集め、図鑑の色を変え、森の住人たちを迎えましょう。</li>
+<li><strong>アカウントなしでオフライン</strong>: 基本のパズルはオフライン対応。広告と任意のアプリ内購入があり、広告・購入・復元には接続が必要です。</li></ul></div>
+<div class="content-block" id="screenshots-ja" data-section="screenshots"><h3>スクリーンショット</h3><ul class="shots" aria-label="スクリーンショット"><li><figure><img src="img/home.png" width="360" height="1225" loading="lazy" alt="絵をひとつずつ育てるホーム画面"><figcaption>絵をひとつずつ育てるホーム画面</figcaption></figure></li><li><figure><img src="img/puzzle.png" width="360" height="900" loading="lazy" alt="15×15も、選んだ行や列を大きなマスで"><figcaption>15×15も、選んだ行や列を大きなマスで</figcaption></figure></li></ul><p class="muted shot-pending">おにわや図鑑の追加画面は準備中です。</p></div>
+<div class="content-block" id="download-ja" data-section="download"><h3>リリース・ダウンロード</h3><div class="platform-grid"><article class="platform-card"><h4>iPhone · iPad</h4><p class="status">iOSリリース準備中</p><dl><dt>対応言語</dt><dd>英語・韓国語・日本語・繁体字中国語</dd><dt>価格・購入</dt><dd>基本無料・広告と任意のアプリ内購入あり</dd></dl><p>ダウンロードリンクはまだありません。公開後にこちらでご案内します。</p><p class="muted">公開後の現地価格は、ストアと購入確認画面でご確認ください。</p><p class="muted">iOSは販売可能な全世界から中国本土を除いて公開予定です。公開後の提供状況は、お住まいの地域のApp Storeでご確認ください。</p></article><article class="platform-card"><h4>Android</h4><p class="status testing">リリース待ち</p><p>Android版は準備中です。テスト参加やインストール用のリンクはまだありません。</p><a class="button secondary" href="#join-ja">テスト状況を見る</a></article></div></div>
+<div class="content-block android-test" id="join-ja" data-section="android-test"><div class="section-heading"><h3>テスト状況</h3><span class="status testing">リリース待ち</span></div><p>公開テストの募集は行っていません。参加できるようになった際に、こちらへご案内を追加します。</p><aside class="notice"><h4>テストのご案内</h4><p>Android版は準備中です。テスト参加やインストール用のリンクはまだありません。</p></aside></div>
+<div class="content-block" id="contact-ja" data-section="support"><h3>お問い合わせ</h3><p>使い方やよくある質問はサポートをご覧ください。不具合やご質問はメールでお知らせください。</p><div class="actions"><a class="button secondary" href="support/index.html#japanese">サポート・よくある質問</a><a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></div></div></section>
+<section id="chinese" lang="zh-TW" class="language-section"><div class="language-heading"><h2>繁體中文</h2><a href="#top">回到頁首 ↑</a></div><nav class="section-nav" aria-label="頁面導覽"><a href="#about-zh-TW">App 介紹</a><a href="#features-zh-TW">主要功能</a><a href="#screenshots-zh-TW">畫面截圖</a><a href="#download-zh-TW">發行與下載</a><a href="#join-zh-TW">測試狀態</a><a href="#contact-zh-TW">聯絡與支援</a></nav>
+<div class="content-block" id="about-zh-TW" data-section="about"><h3>App 介紹</h3><p class="muted">噓！森林小花園：數織</p><p>依數字塗滿格子，讓小圖案浮現，照顧森林旅舍後院的花園。靠邏輯解題，不必猜測，想休息就休息。</p></div>
+<div class="content-block" id="features-zh-TW" data-section="features"><h3>主要功能</h3><ul class="features"><li><strong>沒有生命或體力限制</strong>: 依自己的步調解題，暫時離開後也能接著儲存的題目繼續玩。</li>
+<li><strong>說明原因的三階段提示</strong>: 找出能推理的線、了解原因，再為一格確定答案塗色或標記 ×。</li>
+<li><strong>共1,140道題目</strong>: 冒險120題、每日120題、自由900題，提供5×5、10×10、15×15及輕鬆或挑戰模式。</li>
+<li><strong>一張圖案，一點花園</strong>: 在五個區域收集圖案、替圖鑑換色，再迎接森林房客來訪。</li>
+<li><strong>不必註冊，也能離線玩</strong>: 基本數織支援離線，內含廣告與可選的App內購買；廣告、購買與回復購買需要網路。</li></ul></div>
+<div class="content-block" id="screenshots-zh-TW" data-section="screenshots"><h3>畫面截圖</h3><ul class="shots" aria-label="畫面截圖"><li><figure><img src="img/home.png" width="360" height="1225" loading="lazy" alt="一張張圖案長成花園的主畫面"><figcaption>一張張圖案長成花園的主畫面</figcaption></figure></li><li><figure><img src="img/puzzle.png" width="360" height="900" loading="lazy" alt="以大格子編輯15×15的橫列或直行"><figcaption>以大格子編輯15×15的橫列或直行</figcaption></figure></li></ul><p class="muted shot-pending">更多花園與圖鑑畫面準備中。</p></div>
+<div class="content-block" id="download-zh-TW" data-section="download"><h3>發行與下載</h3><div class="platform-grid"><article class="platform-card"><h4>iPhone · iPad</h4><p class="status">iOS發行準備中</p><dl><dt>支援語言</dt><dd>英文・韓文・日文・繁體中文</dd><dt>價格與購買</dt><dd>基本免費・廣告與可選App內購買</dd></dl><p>目前尚無下載連結，正式推出後將在此提供資訊。</p><p class="muted">正式推出後，請確認商店顯示的當地價格與購買確認畫面。</p><p class="muted">iOS預計於可販售的全球國家與地區推出，中國大陸除外。正式推出後，請在所在地區的App Store確認供應情況。</p></article><article class="platform-card"><h4>Android</h4><p class="status testing">等待發行</p><p>Android版準備中，目前尚未提供測試參加或安裝連結。</p><a class="button secondary" href="#join-zh-TW">查看測試狀態</a></article></div></div>
+<div class="content-block android-test" id="join-zh-TW" data-section="android-test"><div class="section-heading"><h3>測試狀態</h3><span class="status testing">等待發行</span></div><p>目前未開放公開測試招募，開放參加時將在此補上正確說明。</p><aside class="notice"><h4>測試說明</h4><p>Android版準備中，目前尚未提供測試參加或安裝連結。</p></aside></div>
+<div class="content-block" id="contact-zh-TW" data-section="support"><h3>聯絡與支援</h3><p>使用方式與常見問題請查看支援頁面，遇到問題也可寄信聯絡我們。</p><div class="actions"><a class="button secondary" href="support/index.html#chinese">支援與常見問題</a><a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></div></div></section>
+<footer><nav aria-label="정책 및 지원 · Policies and support"><a href="index.html">앱 소개 · About</a><a href="privacy/index.html">개인정보 처리방침 · Privacy Policy</a><a href="support/index.html">고객 지원 · Support</a></nav><p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p></footer>
+</main>
+</body>
+</html>
