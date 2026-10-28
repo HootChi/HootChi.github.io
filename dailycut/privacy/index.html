@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Privacy · 개인정보 · プライバシー · 隱私權 — Atto Studio — Daily Cut: One Photo a Day</title>
+<meta name="description" content="How Daily Cut handles local photos, permissions, backups, sharing and support email.">
+<link rel="canonical" href="https://hootchi.github.io/dailycut/privacy/">
+<style>
+:root {
+    color-scheme: light dark;
+    --bg: #f6f2e9; --fg: #262e26; --muted: #5b5f73; --line: #e3dccb; --accent: #42583d; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #191b18; --fg: #f4f1e8; --muted: #b4b2c8; --line: #343a63; --accent: #c1d1b0; --card: #252922; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { padding-bottom: 8px; }
+  h1 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 4px; word-break: keep-all; }
+  :lang(ko) { word-break: keep-all; }
+  h2 { font-size: 1.3rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 24px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul, ol { padding-left: 1.3em; }
+  ol > li + li { margin-top: 8px; }
+  a { color: var(--accent); }
+  .site { margin: 0 0 20px; }
+  .site a { font-weight: 600; text-decoration: none; }
+  .meta { color: var(--muted); margin: 0; }
+  .toc { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+  .toc a { display: inline-block; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); text-decoration: none; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 24px; }
+  .card h2 { margin: 0; padding: 0; border: 0; }
+  .card ul { list-style: none; padding: 0; margin: 16px 0; }
+  .card li { margin: 8px 0; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  footer p { margin: 8px 0 0; }
+.app-icon{width:88px;height:88px;border-radius:20px;display:block;margin:0 0 16px}code{overflow-wrap:anywhere}h3{overflow-wrap:anywhere}.links{display:flex;gap:12px;flex-wrap:wrap}.links a{padding:10px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none}section:target{scroll-margin-top:12px}.meta a{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<!-- Prepared locally 2026-10-28. Publication is a separate action. -->
+<main>
+<p class="site"><a href="https://hootchi.github.io/">Atto Studio</a></p>
+<header>
+<img class="app-icon" src="../assets/icon.png" width="88" height="88" alt="Daily Cut app icon">
+<h1>Privacy · 개인정보 · プライバシー · 隱私權</h1>
+<p class="meta">Daily Cut: One Photo a Day · 하루 한 컷 · 一日一枚 · 一日一格</p>
+<p class="meta">Updated / 작성 / 更新 / 更新日期: 2026-10-28</p>
+<p class="meta"><a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+<nav class="toc" aria-label="Language"><a href="#english" lang="en">English</a><a href="#korean" lang="ko">한국어</a><a href="#japanese" lang="ja">日本語</a><a href="#traditional-chinese" lang="zh-Hant">繁體中文</a></nav>
+</header>
+<section id="english" lang="en"><h2>English · Daily Cut: One Photo a Day</h2><p class="summary">Daily Cut keeps one photo a day and a short note in the app on your device. There is no app account, developer-operated server, advertising, analytics, or usage tracking. The app does not automatically send your photos, notes, or app activity to Atto Studio.</p>
+<h3>Data on your device</h3><p>The app stores photos you take or select, dates, notes, crop regions, your chosen tone, and settings such as reminders and language. Capture time may be read to check whether an imported photo matches a past date. Stored photos are normalized JPEG images within dimension and file-size limits, with GPS metadata removed. They may differ from the source file in Photos. Tone, crop, and date-stamp changes are rendered from the stored photo rather than overwriting it. Widgets use small photo copies and dates for the latest seven days in a shared container on the same device.</p>
+<h3>Permissions</h3><p>Camera access is requested when you open the camera. Imports use the system photo picker without requesting full-library read access. Saving to Photos requests add-only access. Saving a capture original to Photos and reminders are off by default; notifications are requested when you enable reminders. The app does not request location, contacts, or microphone access. Declining one permission leaves unrelated viewing and settings features available.</p>
+<h3>Photos, Files, sharing, and system backups</h3><p>The main photo and record folder and the widget-copy folder are configured to be excluded from automatic operating-system backups. This setting concerns those folders; other system-managed copies and installation settings follow the operating system's backup and restore behavior. Daily Cut has no automatic cloud-sync service.</p><p>When you choose to save to Photos, export a backup to Files, or share a photo or poster, a copy goes to your chosen destination. iCloud Photos, iCloud Drive, or another service may sync or transmit that copy according to your settings and the service's policy. These are distinct from developer collection. The app cannot block every transfer performed by those services. Photos may add metadata, so full-file byte identity is not promised.</p><p>A <code>.dailycut</code> backup contains photos, dates, notes, and saved app data and is not encrypted. Keep it somewhere safe. Restoring photos and records keeps the receiving installation's settings and OS permission state. Make your own backup before deleting the app or changing devices.</p>
+<h3>Deletion</h3><p>Deleting a photo offers a five-second Undo period; the app then retires its stored file. Exported photos, shared copies, and backup files are separate and must be managed at their destination. Removing the app may remove its local records. OS and external-service copies follow their own settings.</p>
+<h3>Support email</h3><p>If you email us, Atto Studio receives your email address and message. We use them only to answer your request, not for marketing, and do not provide them to others for marketing. Messages are received and stored using Google LLC's Gmail; the mail service's policies apply. We keep messages only as long as needed to handle the request and delete them on request. The app's feedback action opens your mail app; it does not automatically send photos, notes, or diagnostics. Avoid including personal photos or sensitive material unless it is needed for your question.</p>
+<h3>Security and contact</h3><p>Local app data is protected by the operating system's app sandbox. Unencrypted backup files require care when stored or shared. Responsible contact: Atto Studio — <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>.</p></section>
+<section id="korean" lang="ko"><h2>한국어 · 하루 한 컷</h2><p class="summary">하루 한 컷은 하루의 사진과 짧은 메모를 기기의 앱 안에 보관합니다. 앱 계정, 자체 서버, 광고, 분석, 사용 추적이 없으며 사진·메모·앱 사용 기록을 Atto Studio에 자동으로 보내지 않습니다.</p>
+<h3>기기에 보관하는 자료</h3><p>촬영하거나 선택한 사진, 날짜, 메모, 자르기 영역, 톤과 알림·언어 등의 설정을 저장합니다. 지난 날짜 가져오기를 판단할 때 촬영 시각을 읽을 수 있습니다. 사진은 크기·용량 한도에 맞춘 JPEG로 정규화하고 GPS를 제거하므로 사진 앱의 원본 파일과 다를 수 있습니다. 톤·자르기·날짜 도장은 앱에 보관한 사진에 덮어쓰지 않고 표시·내보내기에서 적용합니다. 위젯에는 최근 7일의 작은 사진 사본과 날짜를 같은 기기의 앱 공유 공간에 둡니다.</p>
+<h3>권한</h3><p>카메라를 열 때 카메라 권한을 요청합니다. 가져오기는 전체 보관함 읽기 권한 없이 시스템 사진 선택기를 사용합니다. 사진 저장은 추가 전용 권한을 요청합니다. 촬영 원본의 사진 앱 추가 저장과 알림은 기본 꺼짐이며 알림을 켤 때 허용을 요청합니다. 위치·연락처·마이크 권한은 요청하지 않습니다. 거부한 기능 외의 기록 열람·설정은 이용할 수 있습니다.</p>
+<h3>Photos·Files·공유·OS 백업</h3><p>사진·기록의 기본 저장 폴더와 위젯 사본 폴더에는 운영체제 자동 백업 제외 속성을 설정합니다. 이 설정은 해당 폴더에 대한 것이며 다른 OS 사본이나 설치 설정의 실제 백업·복원은 운영체제에 따릅니다. 앱 자체의 자동 클라우드 동기화는 없습니다.</p><p>사진 앱 저장, Files 백업 위치, 공유 대상을 고르면 그곳에 사본이 만들어집니다. iCloud 사진·iCloud Drive·외부 서비스가 이용자 설정과 해당 정책에 따라 사본을 동기화하거나 전송할 수 있습니다. 이를 개발자 수집과 구별하며 앱이 해당 서비스의 모든 외부 전송을 막지는 않습니다. Photos가 메타데이터를 추가할 수 있어 전체 파일 바이트가 같다고 보장하지 않습니다.</p><p><code>.dailycut</code> 백업에는 사진·날짜·메모와 저장된 앱 자료가 들어 있으며 암호화되지 않습니다. 안전한 곳에 보관하세요. 사진·기록을 복원할 때 현 설치의 설정과 OS 권한은 유지합니다. 앱 삭제나 기기 변경 전 필요한 기록을 직접 백업해 주세요.</p>
+<h3>삭제</h3><p>사진을 삭제하면 5초 동안 되돌릴 수 있고 이후 앱 보관 파일을 정리합니다. 사진 앱·공유 대상·백업에 있는 사본은 별개이므로 원래 저장한 곳에서 관리해야 합니다. 앱을 지우면 기기의 앱 기록이 사라질 수 있습니다. OS·외부 서비스의 사본은 해당 설정을 따릅니다.</p>
+<h3>문의 메일</h3><p>이메일로 문의하면 Atto Studio는 이메일 주소와 보낸 내용을 받습니다. 답변에만 사용하며 마케팅에 이용하거나 마케팅을 위해 제공하지 않습니다. Google LLC의 Gmail에서 수신·보관하며 메일 서비스의 정책이 적용됩니다. 처리에 필요한 기간 동안만 보관하고 요청하시면 삭제합니다. 의견 보내기는 메일 앱을 열며 사진·메모·진단을 자동 전송하지 않습니다. 필요한 경우가 아니면 개인 사진이나 민감한 내용을 첨부하지 마세요.</p>
+<h3>보안과 담당 연락처</h3><p>기기의 자료는 운영체제의 앱 격리 공간으로 보호됩니다. 암호화되지 않은 백업 파일은 저장·공유할 때 주의해 주세요. 담당: Atto Studio — <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>.</p></section>
+<section id="japanese" lang="ja"><h2>日本語 · 一日一枚</h2><p class="summary">一日一枚は、一日の写真と短いメモを端末のアプリ内に保管します。アカウント、独自サーバー、広告、分析や利用追跡はありません。写真、メモ、利用記録をAtto Studioへ自動送信しません。</p>
+<h3>端末に保管する情報</h3><p>撮影・選択した写真、日付、メモ、切り抜き、色合い、通知や言語などの設定を保存します。過去の日への取り込みを確認するため撮影時刻を読むことがあります。写真は大きさ・容量の上限に合わせたGPS情報のないJPEGに変換するため、写真アプリの元ファイルと異なる場合があります。色合い、切り抜き、日付は保存した基本写真を上書きせず、表示・書き出し時に適用します。ウィジェットは直近7日の小さな写真コピーと日付を同じ端末の共有領域に保管します。</p>
+<h3>許可</h3><p>カメラを開くときに撮影の許可を求めます。取り込みはシステムの写真ピッカーを使用し、ライブラリ全体の読み取りを求めません。写真保存は追加専用です。撮影元写真の追加保存と通知は初期状態でオフで、通知をオンにすると許可を求めます。位置、連絡先、マイクは要求しません。拒否しても関係のない閲覧や設定は利用できます。</p>
+<h3>写真・ファイル・共有・OSバックアップ</h3><p>写真と記録の主なフォルダー、ウィジェット用コピーのフォルダーには、OSの自動バックアップから除外する属性を設定します。これは対象フォルダーの設定であり、ほかのOSのコピーやインストール設定のバックアップ・復元はOSに従います。独自の自動クラウド同期はありません。</p><p>「写真」への保存、「ファイル」のバックアップ先、共有先を選ぶと、そこにコピーが作られます。iCloud写真、iCloud Driveなどが利用者の設定と各方針に従って同期・送信する場合があります。これを開発者の収集と区別します。アプリは各サービスのあらゆる転送を止めるものではありません。Photosがメタデータを追加する場合があり、ファイル全体のバイト一致は保証しません。</p><p><code>.dailycut</code>には写真、日付、メモ、保存されたアプリ情報が入り、暗号化されません。安全に保管してください。写真と記録の復元では、受け取る端末の設定とOSの許可状態を維持します。アプリ削除・端末変更前に必要な記録を自分でバックアップしてください。</p>
+<h3>削除</h3><p>写真の削除は5秒間取り消せ、その後アプリの保存ファイルを整理します。書き出した写真、共有コピー、バックアップは別々で、保存先で管理してください。アプリの削除により端末内の記録を失う場合があります。OSや外部サービスのコピーは各設定に従います。</p>
+<h3>お問い合わせメール</h3><p>メールを送るとAtto Studioはメールアドレスと内容を受け取ります。回答のためだけに使用し、マーケティングに利用・提供しません。Google LLCのGmailで受信・保存し、メールサービスの方針が適用されます。対応に必要な期間だけ保管し、ご要望があれば削除します。アプリのご意見機能はメールアプリを開くだけで、写真、メモ、診断を自動送信しません。必要のない個人写真や機微な内容は添付しないでください。</p>
+<h3>安全性と連絡先</h3><p>端末の情報はOSのアプリ用サンドボックスで保護されます。暗号化されないバックアップの保管・共有にはご注意ください。担当：Atto Studio — <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>。</p></section>
+<section id="traditional-chinese" lang="zh-Hant"><h2>繁體中文 · 一日一格</h2><p class="summary">一日一格將每天的相片與簡短備註保存在裝置的App內。沒有App帳號、自有伺服器、廣告、分析或使用追蹤，也不會自動將相片、備註或使用記錄傳送給Atto Studio。</p>
+<h3>裝置上儲存的資料</h3><p>App儲存拍攝或選取的相片、日期、備註、裁切範圍、色調及提醒、語言等設定。匯入過去日期時可能讀取拍攝時間以比對日期。相片會依尺寸與容量上限轉為移除GPS的JPEG，因此可能不同於「照片」中的來源檔案。色調、裁切與日期戳記在顯示或匯出時套用，不覆寫App儲存的基本相片。小工具使用最近7天的小型相片副本與日期，保存在同一裝置的共用空間。</p>
+<h3>權限</h3><p>開啟相機時請求相機權限。匯入使用系統相片選取器，不要求讀取完整圖庫。儲存至「照片」只要求新增權限。另存拍攝原圖與提醒皆預設關閉，開啟提醒時才請求通知權限。不要求位置、聯絡人或麥克風權限。拒絕特定權限後，仍可使用無關的檢視與設定。</p>
+<h3>照片、檔案、分享與OS備份</h3><p>主要相片與記錄資料夾、小工具副本資料夾會設定為排除自動OS備份。此設定針對這些資料夾；其他OS管理的副本及安裝設定，其備份與還原依作業系統運作。App沒有自動雲端同步服務。</p><p>選擇儲存到「照片」、備份至「檔案」或分享對象時，目的地會建立副本。iCloud照片、iCloud Drive或其他服務可能依使用者設定與服務政策同步或傳送副本。這與開發者蒐集不同，App無法阻擋各服務的所有傳輸。Photos可能增加中繼資料，因此不保證整個檔案位元組相同。</p><p><code>.dailycut</code>包含相片、日期、備註與儲存的App資料，並未加密。請妥善保管。還原相片與記錄時，接收端安裝設定與OS權限保持不變。刪除App或更換裝置前，請自行備份需要的記錄。</p>
+<h3>刪除</h3><p>刪除相片後有5秒可復原，之後App會清理儲存的檔案。已匯出、分享及備份的副本彼此獨立，需在目的地管理。刪除App可能移除本機記錄；OS與外部服務副本依各自設定處理。</p>
+<h3>支援郵件</h3><p>來信時，Atto Studio會收到電子郵件地址與內容，只用於回覆，不用於行銷或提供給他人行銷。郵件透過Google LLC的Gmail接收、保存，適用郵件服務政策。僅保留處理問題所需期間，並可依要求刪除。App的意見功能只開啟郵件App，不自動傳送相片、備註或診斷資料。非必要時請勿附上私人相片或敏感內容。</p>
+<h3>安全與聯絡窗口</h3><p>本機資料由OS的App沙箱保護。未加密的備份在儲存或分享時需注意。負責窗口：Atto Studio — <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a>。</p></section>
+<footer>
+<nav aria-label="Daily Cut">
+<a href="../">Daily Cut</a>
+<a href="../support/">Support · 지원 · サポート · 支援</a>
+<a href="../privacy/" aria-current="page">Privacy · 개인정보 · プライバシー · 隱私權</a>
+</nav>
+<p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p>
+</footer>
+</main>
+</body>
+</html>
