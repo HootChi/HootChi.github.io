@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>가로세로꼬들</title>
+<meta name="description" content="한글 자모를 추리하며 교차 단서를 이어가는 iPhone 퍼즐 게임입니다. 대한민국 App Store에 무료 출시할 예정입니다.">
+<link rel="canonical" href="https://hootchi.github.io/wordquiz/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atto Studio">
+<meta property="og:title" content="가로세로꼬들">
+<meta property="og:description" content="한글 자모를 추리하며 교차 단서를 이어가는 iPhone 퍼즐 게임입니다. 대한민국 App Store에 무료 출시할 예정입니다.">
+<meta property="og:url" content="https://hootchi.github.io/wordquiz/">
+<meta property="og:image" content="https://hootchi.github.io/wordquiz/img/icon.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="가로세로꼬들 앱 아이콘">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f8f7f2; --card: #fff; --fg: #213b32; --muted: #59675f;
+  --line: #dce3db; --accent: #29604a; --tint: #edf4ed; --notice: #fff8e7;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #15231e; --card: #1d3027; --fg: #edf2e9; --muted: #b6c5ba; --line: #385044; --accent: #b8dfc5; --tint: #273f32; --notice: #3b3424; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif; }
+main { width: min(100%, 980px); margin: 0 auto; padding: 24px 24px 64px; }
+h1,h2,h3,h4,p,ul,ol,dl { margin-top: 0; }
+h1,h2,h3,h4 { line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0; }
+h2 { font-size: 1.5rem; margin-bottom: 0; }
+h3 { font-size: 1.28rem; margin-bottom: 18px; }
+h4 { font-size: 1.05rem; margin-bottom: 10px; }
+p { margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+p,li,dd { overflow-wrap: anywhere; }
+:lang(ko),:lang(ja) { word-break: keep-all; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+[id] { scroll-margin-top: 24px; }
+.site { margin-bottom: 20px; font-weight: 700; }
+.site a { text-decoration: none; }
+.banner { display: block; width: 100%; height: auto; aspect-ratio: 1024/500; border: 1px solid var(--line); border-radius: 20px; }
+.title { display: flex; gap: 16px; align-items: center; margin: 28px 0 16px; }
+.title img { width: 72px; height: 72px; flex: none; border-radius: 18px; }
+.title h1 { min-width: 0; }
+.title .en,.title .ja { display: block; margin-top: 4px; color: var(--muted); font-size: 1.05rem; font-weight: 600; }
+.pitch { font-size: 1.05rem; margin-bottom: 6px; }
+.pitch + .pitch { color: var(--muted); font-size: .97rem; }
+.platform-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.hero-platforms { margin-top: 28px; }
+.platform-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; border: 1px solid var(--line); border-radius: 16px; padding: 22px; background: var(--card); }
+.platform-card h2,.platform-card h4,.platform-card p { margin: 0; }
+.platform-card h2 { font-size: 1.1rem; }
+.platform-card .button { margin-top: auto; }
+.status { display: inline-block; padding: 3px 10px; border-radius: 6px; background: var(--tint); color: var(--accent); font-size: .85rem; font-weight: 700; }
+.status.testing { color: var(--muted); background: var(--bg); border: 1px solid var(--line); }
+.button { display: inline-flex; justify-content: center; align-items: center; min-width: 0; max-width: 100%; min-height: 44px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--bg); font-size: .95rem; font-weight: 700; text-align: center; text-decoration: none; overflow-wrap: anywhere; }
+.button.secondary { background: var(--card); color: var(--accent); border-color: var(--line); }
+.button:hover { filter: brightness(.94); }
+.language-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 24px 0; margin: 12px 0 0; }
+.language-nav a { display: inline-block; min-height: 42px; padding: 6px 18px; border: 1px solid var(--line); border-radius: 99px; background: var(--card); text-decoration: none; font-weight: 600; }
+.language-section { margin-top: 32px; }
+.language-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 2px solid var(--accent); }
+.language-heading>a { font-size: .85rem; flex: none; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 16px 0 24px; font-size: .9rem; }
+.content-block { margin-bottom: 32px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.features { padding-left: 1.2em; margin-bottom: 0; }
+.features li+li { margin-top: 16px; }
+.muted { color: var(--muted); font-size: .9rem; }
+.shots { display: flex; gap: 16px; list-style: none; padding: 0 0 12px; margin: 0; overflow-x: auto; scroll-snap-type: x mandatory; }
+.shots li { flex: 0 0 calc((100% - 48px)/4); min-width: 0; scroll-snap-align: start; }
+.shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; }
+.shots.landscape { flex-wrap: wrap; }
+.shots.landscape li { flex-basis: calc((100% - 16px)/2); }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: .9rem; margin-bottom: 0; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+.section-heading { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.section-heading h3 { margin: 0; }
+.android-test { border-color: var(--accent); }
+.notice { padding: 18px 20px; background: var(--tint); border-radius: 12px; margin: 20px 0; }
+.notice h4 { font-size: 1rem; }
+.notice p { font-size: .95rem; }
+.notice.payment { background: var(--notice); }
+.test-steps { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; list-style: none; padding: 0; margin: 24px 0; counter-reset: step; }
+.test-steps>li { position: relative; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.step-number { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-bottom: 12px; border-radius: 50%; color: var(--bg); background: var(--accent); font-weight: 700; }
+.test-steps p { font-size: .95rem; }
+.test-steps .button { width: 100%; }
+.test-steps .muted { margin-top: 12px; font-size: .8rem; }
+.test-notes { padding-top: 4px; color: var(--muted); font-size: .9rem; }
+.test-notes h4 { color: var(--fg); font-size: .95rem; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+footer { padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer p { margin: 16px 0 0; }
+@media(max-width: 640px) {
+  main { padding: 18px 16px 48px; }
+  .banner { border-radius: 14px; }
+  .title { margin-top: 22px; gap: 12px; }
+  .title img { width: 60px; height: 60px; border-radius: 14px; }
+  .platform-grid,.test-steps { grid-template-columns: 1fr; }
+  .platform-card,.content-block { padding: 20px; }
+  .content-block { border-radius: 14px; margin-bottom: 24px; }
+  .platform-card .button { width: 100%; }
+  .language-heading { align-items: flex-start; }
+  .section-nav { gap: 8px 16px; }
+  .shots li { flex-basis: 60%; }
+  .shots.landscape { flex-wrap: nowrap; }
+  .shots.landscape li { flex-basis: 90%; }
+  .notice { padding: 16px; }
+  .test-steps>li { padding: 18px; }
+  dl { grid-template-columns: 1fr; gap: 0; }
+  dd { margin-bottom: 8px; }
+}
+</style>
+</head>
+<body>
+<main>
+<p class="site"><a href="/">← Atto Studio</a></p>
+<header class="hero" id="top">
+<div class="title"><img src="img/icon.png" width="1024" height="1024" alt=""><h1>가로세로꼬들</h1></div>
+<p class="pitch">한 단어의 정답이 다음 단어의 단서가 됩니다.</p>
+<div class="platform-grid hero-platforms" aria-label="출시 상태"><article class="platform-card"><h2>iPhone</h2><p class="status testing">출시 예정</p><p class="muted">대한민국 · 무료 출시 예정</p></article></div>
+<nav class="language-nav" aria-label="Language"><a href="#korean" lang="ko">한국어</a></nav>
+</header>
+<section id="korean" lang="ko" class="language-section">
+<div class="language-heading"><h2>한국어</h2><a href="#top">맨 위로 ↑</a></div>
+<nav class="section-nav" aria-label="페이지 안내"><a href="#about">앱 소개</a><a href="#features">주요 기능</a><a href="#screenshots">스크린샷</a><a href="#download">출시 및 다운로드</a><a href="#contact">문의 및 지원</a></nav>
+<div class="content-block" id="about" data-section="about"><h3>앱 소개</h3><p>한글 단어를 자음과 모음으로 나누어 추리하는 가로세로 퍼즐입니다. 기본 자모 하나가 한 칸을 사용합니다. 4~7칸의 단어를 여섯 번 안에 맞히고, 정답으로 얻은 교차 단서를 이어가세요.</p></div>
+<div class="content-block" id="features" data-section="features"><h3>주요 기능</h3><ul class="features"><li><strong>맞힐수록 이어지는 가로세로</strong>: 가로 두 단어와 세로 두 단어가 교차합니다. 한 단어를 완성하면 교차 칸이 공개되어 다음 단어를 풀 단서가 됩니다. 여섯 번 안에 못 맞혀도 하트로 새 여섯 번을 얻을 수 있습니다.</li>
+<li><strong>매일 두 가지 도전</strong>: 오늘의 가로세로와 오늘의 한 단어 퍼즐을 각각 한 판씩 제공합니다. 매일 한국시간 0시에 문제가 바뀌며, 한 단어 모드는 하트 없이 여섯 번의 추측으로 도전합니다.</li>
+<li><strong>차근차근 여는 126개 스테이지</strong>: 한 판을 완성하면 다음 퍼즐이 열립니다. 쉬움·보통·어려움의 다양한 단어와 교차 단서를 만나보세요.</li>
+<li><strong>내게 편한 화면</strong>: 시스템·라이트·다크 모드를 선택하고, 색약 모드에서 색과 기호로 결과를 구분할 수 있습니다. 완성한 뒤에도 퍼즐판과 추론 과정을 다시 볼 수 있습니다.</li>
+<li><strong>오프라인 플레이</strong>: 퍼즐과 사전이 앱에 담겨 있어 인터넷 없이 플레이할 수 있습니다. 진행과 화면 설정은 기기에 저장되며, 계정·광고·인앱 구매는 사용하지 않습니다.</li></ul></div>
+<div class="content-block" id="screenshots" data-section="screenshots"><h3>스크린샷</h3><p class="muted">화면을 옆으로 넘겨 더 살펴보세요.</p><ul class="shots" aria-label="게임 화면"><li><img src="img/store-home-light.png" width="1206" height="2622" loading="lazy" alt="홈: 가로세로 스테이지와 매일 두 가지 도전"></li>
+<li><img src="img/store-crossword-board-light.png" width="1206" height="2622" loading="lazy" alt="가로세로 전체판: 가로 두 단어와 세로 두 단어의 교차"></li>
+<li><img src="img/store-crossword-across-light.png" width="1206" height="2622" loading="lazy" alt="가로 입력판: 여섯 번의 추측과 자모·위치 단서"></li>
+<li><img src="img/store-crossword-down-light.png" width="1206" height="2622" loading="lazy" alt="세로 입력판: 선택한 단어를 세로로 추리"></li>
+<li><img src="img/store-original-light.png" width="1206" height="2622" loading="lazy" alt="오늘의 한 단어: 여섯 줄의 추론 과정"></li>
+<li><img src="img/store-crossword-down-dark-colorblind.png" width="1206" height="2622" loading="lazy" alt="다크·색약 모드: 파랑·주황과 기호로 결과 구분"></li></ul></div>
+<div class="content-block" id="download" data-section="download"><h3>출시 및 다운로드</h3><div class="platform-grid"><article class="platform-card"><h4>iPhone</h4><p class="status testing">출시 예정</p><dl><dt>지원 환경</dt><dd>iPhone · iOS 16.0 이상</dd><dt>지원 언어</dt><dd>한국어</dd><dt>가격 및 결제</dt><dd>무료 · 광고 및 인앱 구매 없음</dd><dt>출시 지역</dt><dd>대한민국</dd></dl><p>대한민국 App Store에 무료 출시할 예정입니다. 공개 다운로드는 출시 후 안내합니다.</p></article></div></div>
+<div class="content-block" id="contact" data-section="support"><h3>문의 및 지원</h3><p>사용 방법과 자주 묻는 질문은 고객 지원 페이지에서 확인하실 수 있습니다. 문의는 지원 이메일로 보내 주세요.</p><div class="actions"><a class="button secondary" href="support/">고객 지원 및 FAQ</a><a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></div></div>
+</section>
+<footer><nav aria-label="정책 및 지원"><a href="index.html" aria-current="page">앱 소개</a><a href="privacy/">개인정보 처리방침</a><a href="support/">고객 지원</a></nav><p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p></footer>
+</main>
+</body>
+</html>
