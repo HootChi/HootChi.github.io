@@ -1,8 +1,12 @@
 {
   "name": "가로세로꼬들",
-  "summary": "한글 자모를 추리하며 교차 단서를 이어가는 iPhone 퍼즐 게임입니다. 대한민국 App Store에 무료 출시할 예정입니다.",
+  "summary": "한글 자모를 추리하며 교차 단서를 이어가는 iPhone 퍼즐 게임입니다. 대한민국 App Store에서 무료로 다운로드할 수 있습니다.",
   "since": "2026-10-31",
   "links": [
+    {
+      "label": "App Store",
+      "href": "https://apps.apple.com/kr/app/id6829114677"
+    },
     {
       "label": "앱 소개",
       "href": "index.html"
