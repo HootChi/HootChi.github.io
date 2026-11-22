@@ -6,8 +6,8 @@
   "since": "2026-09-29",
   "links": [
     { "label": "App Store", "href": "https://apps.apple.com/app/id6821342548" },
-    { "label": "About the game", "label_ko": "게임 소개", "href": "index.html" },
     { "label": "Google Play", "href": "https://play.google.com/store/apps/details?id=com.attostudio.tuckaway" },
+    { "label": "About the game", "label_ko": "게임 소개", "href": "index.html" },
     { "label": "Privacy Policy", "label_ko": "개인정보 처리방침", "href": "privacy/" },
     { "label": "Terms of Use", "label_ko": "이용약관", "href": "terms/" },
     { "label": "Support", "label_ko": "고객 지원", "href": "support/" }
