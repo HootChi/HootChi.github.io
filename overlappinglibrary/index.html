@@ -4,32 +4,163 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <title>겹치는 서재 · Atto Studio</title>
 <meta name="description" content="읽은 책과 읽고 싶은 책을 정리하고 내 서재를 공유하는 독서 기록 앱. App Store와 웹에서 만날 수 있어요.">
 <link rel="canonical" href="https://hootchi.github.io/overlappinglibrary/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atto Studio">
+<meta property="og:title" content="겹치는 서재">
+<meta property="og:description" content="읽은 책을 기록하고 책장을 나누는 독서 기록 앱.">
+<meta property="og:url" content="https://hootchi.github.io/overlappinglibrary/">
+<meta property="og:image" content="https://hootchi.github.io/overlappinglibrary/img/icon.webp">
+<meta property="og:image:width" content="256">
+<meta property="og:image:height" content="256">
+<meta property="og:image:alt" content="겹치는 서재 앱 아이콘">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
 <style>
-body{margin:0;font:1rem/1.65 system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
-main{max-width:42rem;margin:auto;padding:clamp(1rem,5vw,3rem)}
-h1{line-height:1.2;font-size:clamp(1.85rem,6vw,2.8rem);margin-bottom:.55rem}
-.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.5rem 0}
-.actions a{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:.35rem .9rem;border:1px solid currentColor;border-radius:.65rem}
-footer{border-top:1px solid color-mix(in srgb,currentColor 25%,transparent);margin-top:2rem;padding-top:1rem}
-footer nav{display:flex;flex-wrap:wrap;gap:.5rem 1rem}
+:root {
+  color-scheme: light dark;
+  --bg: #faf6ec; --card: #fffdf7; --fg: #203b2b; --muted: #536456;
+  --line: #dedfd1; --accent: #2c6244; --tint: #edf3e7; --notice: #fff8e7;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #15231e; --card: #1d3027; --fg: #edf2e9; --muted: #b6c5ba; --line: #385044; --accent: #b8dfc5; --tint: #273f32; --notice: #3b3424; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif; }
+main { width: min(100%, 980px); margin: 0 auto; padding: 24px 24px 64px; }
+h1,h2,h3,h4,p,ul,ol,dl { margin-top: 0; }
+h1,h2,h3,h4 { line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0; }
+h2 { font-size: 1.5rem; margin-bottom: 0; }
+h3 { font-size: 1.28rem; margin-bottom: 18px; }
+h4 { font-size: 1.05rem; margin-bottom: 10px; }
+p { margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+p,li,dd { overflow-wrap: anywhere; }
+:lang(ko),:lang(ja) { word-break: keep-all; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+[id] { scroll-margin-top: 24px; }
+.site { margin-bottom: 20px; font-weight: 700; }
+.site a { text-decoration: none; }
+.title { display: flex; gap: 16px; align-items: center; margin: 28px 0 16px; }
+.title img { width: 72px; height: 72px; flex: none; border-radius: 18px; }
+.title h1 { min-width: 0; }
+.title .en,.title .ja { display: block; margin-top: 4px; color: var(--muted); font-size: 1.05rem; font-weight: 600; }
+.pitch { font-size: 1.05rem; margin-bottom: 6px; }
+.pitch + .pitch { color: var(--muted); font-size: .97rem; }
+.platform-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.hero-platforms { margin-top: 28px; }
+.platform-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; border: 1px solid var(--line); border-radius: 16px; padding: 22px; background: var(--card); }
+.platform-card h2,.platform-card h4,.platform-card p { margin: 0; }
+.platform-card h2 { font-size: 1.1rem; }
+.platform-card .button { margin-top: auto; }
+.status { display: inline-block; padding: 3px 10px; border-radius: 6px; background: var(--tint); color: var(--accent); font-size: .85rem; font-weight: 700; }
+.status.testing { color: var(--muted); background: var(--bg); border: 1px solid var(--line); }
+.button { display: inline-flex; justify-content: center; align-items: center; min-width: 0; max-width: 100%; min-height: 44px; padding: 9px 16px; border: 1px solid var(--accent); border-radius: 10px; background: var(--accent); color: var(--bg); font-size: .95rem; font-weight: 700; text-align: center; text-decoration: none; overflow-wrap: anywhere; }
+.button.secondary { background: var(--card); color: var(--accent); border-color: var(--line); }
+.button:hover { filter: brightness(.94); }
+.language-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 24px 0; margin: 12px 0 0; }
+.language-nav a { display: inline-block; min-height: 42px; padding: 6px 18px; border: 1px solid var(--line); border-radius: 99px; background: var(--card); text-decoration: none; font-weight: 600; }
+.language-section { margin-top: 32px; }
+.language-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 2px solid var(--accent); }
+.language-heading>a { font-size: .85rem; flex: none; }
+.section-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 16px 0 24px; font-size: .9rem; }
+.content-block { margin-bottom: 32px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+.features { padding-left: 1.2em; margin-bottom: 0; }
+.features li+li { margin-top: 16px; }
+.muted { color: var(--muted); font-size: .9rem; }
+.shots { display: flex; gap: 16px; list-style: none; padding: 0 0 12px; margin: 0; overflow-x: auto; scroll-snap-type: x mandatory; }
+.shots li { flex: 0 0 calc((100% - 48px)/4); min-width: 0; scroll-snap-align: start; }
+.shots img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 12px; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: .9rem; margin-bottom: 0; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+.section-heading { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.section-heading h3 { margin: 0; }
+.android-test { border-color: var(--accent); }
+.notice { padding: 18px 20px; background: var(--tint); border-radius: 12px; margin: 20px 0; }
+.notice h4 { font-size: 1rem; }
+.notice p { font-size: .95rem; }
+.notice.payment { background: var(--notice); }
+.test-steps { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; list-style: none; padding: 0; margin: 24px 0; counter-reset: step; }
+.test-steps>li { position: relative; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.step-number { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-bottom: 12px; border-radius: 50%; color: var(--bg); background: var(--accent); font-weight: 700; }
+.test-steps p { font-size: .95rem; }
+.test-steps .button { width: 100%; }
+.test-steps .muted { margin-top: 12px; font-size: .8rem; }
+.test-notes { padding-top: 4px; color: var(--muted); font-size: .9rem; }
+.test-notes h4 { color: var(--fg); font-size: .95rem; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+figure { margin: 0; }
+figcaption { margin-top: 8px; color: var(--muted); font-size: .85rem; }
+footer { padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer p { margin: 16px 0 0; }
+@media(max-width: 640px) {
+  main { padding: 18px 16px 48px; }
+  .title { margin-top: 22px; gap: 12px; }
+  .title img { width: 60px; height: 60px; border-radius: 14px; }
+  .platform-grid,.test-steps { grid-template-columns: 1fr; }
+  .platform-card,.content-block { padding: 20px; }
+  .content-block { border-radius: 14px; margin-bottom: 24px; }
+  .platform-card .button { width: 100%; }
+  .language-heading { align-items: flex-start; }
+  .section-nav { gap: 8px 16px; }
+  .shots li { flex-basis: 60%; }
+  .notice { padding: 16px; }
+  .test-steps>li { padding: 18px; }
+  dl { grid-template-columns: 1fr; gap: 0; }
+  dd { margin-bottom: 8px; }
+}
 </style>
 </head>
 <body>
 <main>
-<p><a href="/">← Atto Studio</a></p>
-<header>
-<h1>겹치는 서재</h1>
-<p>읽은 책, 읽는 중인 책, 읽고 싶은 책을 한곳에 모아 보세요. 별점과 감상, 마음에 남은 문장을 기록하고 내 서재를 공유할 수 있어요.</p>
-<p>App Store에서 무료 다운로드 · iOS / iPadOS 16.0 이상</p>
-<div class="actions"><a href="https://apps.apple.com/kr/app/id6824933807">App Store에서 다운로드</a><a href="https://overlappinglibrary.pages.dev/">웹 서재 열기</a></div>
+<p class="site"><a href="/">← Atto Studio</a></p>
+<header class="hero" id="top">
+  <div class="title"><img src="img/icon.webp" width="256" height="256" alt=""><h1>겹치는 서재</h1></div>
+  <p class="pitch">읽은 책을 기록하고, 내 책장을 나눠요.</p>
+  <p class="pitch">책과 감상, 마음에 남은 문장을 한곳에 모으고 다른 독자와 겹치는 책을 찾아보세요.</p>
+  <div class="platform-grid hero-platforms" aria-label="앱과 웹 이용 안내">
+    <article class="platform-card"><h2>iPhone · iPad</h2><p class="status">App Store 출시</p><p class="muted">무료 다운로드 · iOS / iPadOS 16.0 이상</p><a class="button" href="https://apps.apple.com/kr/app/id6824933807">App Store에서 다운로드</a></article>
+    <article class="platform-card"><h2>웹</h2><p class="status">브라우저에서 이용 가능</p><p class="muted">겹치는 서재 웹 앱으로 이동합니다.</p><a class="button secondary" href="https://overlappinglibrary.pages.dev/">웹 서재 열기</a></article>
+  </div>
 </header>
-<footer>
-<nav aria-label="정책 및 지원"><a href="https://overlappinglibrary.pages.dev/privacy/">개인정보 처리방침</a><a href="https://overlappinglibrary.pages.dev/account-deletion/">계정 삭제 안내</a><a href="mailto:attostudio.support@gmail.com">고객 지원</a></nav>
-</footer>
+<section id="korean" lang="ko" class="language-section">
+  <div class="language-heading"><h2>한국어</h2><a href="#top">맨 위로 ↑</a></div>
+  <nav class="section-nav" aria-label="페이지 안내"><a href="#about">앱 소개</a><a href="#features">주요 기능</a><a href="#screenshots">스크린샷</a><a href="#download">출시 및 다운로드</a><a href="#contact">문의 및 지원</a></nav>
+  <div class="content-block" id="about" data-section="about"><h3>앱 소개</h3><p>다 읽은 책, 읽는 중인 책, 앞으로 읽고 싶은 책을 한곳에서 정리할 수 있는 독서 기록 앱입니다. 내 책장을 꾸미고, 별점과 감상을 남기고, 다른 독자의 공개 서재에서 나와 겹치는 책을 확인해 보세요.</p></div>
+  <div class="content-block" id="features" data-section="features"><h3>주요 기능</h3>
+    <ul class="features">
+      <li><strong>나만의 책장</strong>: 독서 상태별로 책을 모으고, 선반이나 목록으로 살펴보세요. 서재 스킨과 라이트·다크 모드를 바꿀 수 있어요.</li>
+      <li><strong>도서 검색과 독서 기록</strong>: 제목·저자·ISBN으로 책을 찾거나 직접 추가하고, 별점·독서 날짜·감상·글귀를 남길 수 있어요.</li>
+      <li><strong>책장 공유와 겹치는 책</strong>: 로그인하면 여러 기기에서 이어 쓰고, 공개 서재나 읽기 전용 링크로 책장을 나눌 수 있어요. 감상이나 글귀 등 공개할 항목은 기록마다 고를 수 있어요.</li>
+      <li><strong>다음에 읽을 책</strong>: 책장에 담긴 책과 독서 상태, 별점을 바탕으로 관련 도서를 찾아볼 수 있어요.</li>
+    </ul>
+  </div>
+  <div class="content-block" id="screenshots" data-section="screenshots"><h3>스크린샷</h3>
+    <p class="muted">App Store에 등록된 앱 화면입니다. 좁은 화면에서는 옆으로 넘겨 보세요.</p>
+    <ul class="shots" aria-label="앱 화면" tabindex="0">
+      <li><figure><img src="img/01-classic-real-spines.webp" width="600" height="1304" loading="lazy" alt="책등을 꽂아 정리한 서재 화면"><figcaption>책등으로 보는 서재</figcaption></figure></li>
+      <li><figure><img src="img/02-editorial-covers.webp" width="600" height="1304" loading="lazy" alt="표지로 책을 살펴보는 화면"><figcaption>표지로 보는 책 목록</figcaption></figure></li>
+      <li><figure><img src="img/03-study-corridor.webp" width="600" height="1304" loading="lazy" alt="다른 독자의 책장을 둘러보는 복도 화면"><figcaption>다른 독자의 책장 둘러보기</figcaption></figure></li>
+      <li><figure><img src="img/05-original-half-star.webp" width="600" height="1304" loading="lazy" alt="책에 반 단위 별점을 남기는 화면"><figcaption>별점과 독서 기록</figcaption></figure></li>
+    </ul>
+  </div>
+  <div class="content-block" id="download" data-section="download"><h3>출시 및 다운로드</h3>
+    <div class="platform-grid">
+      <article class="platform-card"><h4>iPhone · iPad</h4><p class="status">App Store 출시</p><dl><dt>지원 환경</dt><dd>iOS / iPadOS 16.0 이상</dd><dt>가격</dt><dd>무료 다운로드</dd></dl><p>로그인하지 않고도 기기에 독서 기록을 남길 수 있어요.</p><a class="button" href="https://apps.apple.com/kr/app/id6824933807">App Store에서 다운로드</a></article>
+      <article class="platform-card"><h4>웹</h4><p class="status">이용 가능</p><p>별도의 겹치는 서재 웹 앱이 브라우저에서 열립니다.</p><a class="button secondary" href="https://overlappinglibrary.pages.dev/">웹 서재 열기</a></article>
+    </div>
+  </div>
+  <div class="content-block" id="contact" data-section="support"><h3>문의 및 지원</h3><p>사용 중 불편한 점은 지원 이메일로 알려 주세요. 개인정보 처리와 계정 삭제 방법은 아래에서 확인할 수 있어요.</p><div class="actions"><a class="button secondary" href="mailto:attostudio.support@gmail.com">고객 지원 이메일</a><a href="https://overlappinglibrary.pages.dev/privacy/">개인정보 처리방침</a><a href="https://overlappinglibrary.pages.dev/account-deletion/">계정 삭제 안내</a></div></div>
+</section>
+<footer><nav aria-label="정책 및 지원"><a href="./" aria-current="page">앱 소개</a><a href="https://overlappinglibrary.pages.dev/privacy/">개인정보 처리방침</a><a href="https://overlappinglibrary.pages.dev/account-deletion/">계정 삭제 안내</a><a href="mailto:attostudio.support@gmail.com">고객 지원</a></nav><p>Atto Studio · <a href="mailto:attostudio.support@gmail.com">attostudio.support@gmail.com</a></p></footer>
 </main>
 </body>
 </html>
