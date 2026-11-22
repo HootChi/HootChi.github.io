@@ -117,12 +117,26 @@ footer p { margin: 16px 0 0; }
   dl { grid-template-columns: 1fr; gap: 0; }
   dd { margin-bottom: 8px; }
 }
+
+.banner { position:relative; isolation:isolate; display:grid; grid-template-columns:46% 54%; align-items:center; width:100%; aspect-ratio:1024/500; overflow:hidden; border:1px solid var(--line); border-radius:20px; color:#fff0d6; background:linear-gradient(115deg,#2d241e 16%,#634936 100%); }
+.banner-copy { position:relative; z-index:2; display:grid; gap:clamp(2px,1vw,10px); padding-inline-start:11%; line-height:1.2; }
+.banner-copy strong { font-size:clamp(1.35rem,5vw,3.5rem); letter-spacing:-.045em; }
+.banner-copy span { font-size:clamp(.67rem,1.7vw,1.12rem); font-weight:600; line-height:1.45; }
+.banner-art { position:relative; align-self:stretch; }
+.banner-art img { position:absolute; display:block; width:37%; height:auto; aspect-ratio:221/480; object-fit:cover; border:clamp(2px,.5vw,6px) solid #2d241e; border-radius:clamp(6px,1.5vw,18px); box-shadow:0 14px 35px #0004; }
+.banner-art .rear { top:16%; right:10%; transform:rotate(10deg); }
+.banner-art .front { z-index:1; top:7%; left:13%; transform:rotate(-7deg); }
+@media(max-width:640px) { .banner { border-radius:14px; } }
 </style>
 </head>
 <body>
 <main>
 <p class="site"><a href="/">← Atto Studio</a></p>
 <header class="hero" id="top">
+<div class="banner" aria-hidden="true">
+  <div class="banner-copy"><strong>겹치는 서재</strong><span>나만의 책장, 함께 보는 서재</span></div>
+  <div class="banner-art"><img class="rear" src="img/02-editorial-covers.webp" alt=""><img class="front" src="img/01-classic-real-spines.webp" alt=""></div>
+</div>
   <div class="title"><img src="img/icon.webp" width="256" height="256" alt=""><h1>겹치는 서재</h1></div>
   <p class="pitch">읽은 책을 기록하고, 내 책장을 나눠요.</p>
   <p class="pitch">책과 감상, 마음에 남은 문장을 한곳에 모으고 다른 독자와 겹치는 책을 찾아보세요.</p>
@@ -130,6 +144,7 @@ footer p { margin: 16px 0 0; }
     <article class="platform-card"><h2>iPhone · iPad</h2><p class="status">App Store 출시</p><p class="muted">무료 다운로드 · iOS / iPadOS 16.0 이상</p><a class="button" href="https://apps.apple.com/kr/app/id6824933807">App Store에서 다운로드</a></article>
     <article class="platform-card"><h2>웹</h2><p class="status">브라우저에서 이용 가능</p><p class="muted">겹치는 서재 웹 앱으로 이동합니다.</p><a class="button secondary" href="https://overlappinglibrary.pages.dev/">웹 서재 열기</a></article>
   </div>
+  <nav class="language-nav" aria-label="언어"><a href="#korean" lang="ko">한국어</a></nav>
 </header>
 <section id="korean" lang="ko" class="language-section">
   <div class="language-heading"><h2>한국어</h2><a href="#top">맨 위로 ↑</a></div>

@@ -93,7 +93,6 @@ footer p { margin: 16px 0 0; }
 
 .skip { position:absolute; left:12px; top:0; transform:translateY(-200%); padding:8px 12px; background:var(--card); z-index:2; }
 .skip:focus { transform:none; }
-.hero-platforms,.download-card { grid-template-columns: minmax(0,1fr); }
 .hero .title { margin-top:12px; }
 .language-nav a,.section-nav a,.language-heading>a,.site a { display:inline-flex; align-items:center; min-height:44px; }
 .language-heading>a { flex:0 1 auto; text-align:end; }
@@ -107,6 +106,16 @@ footer p { margin: 16px 0 0; }
 .shots img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
 .shots figcaption { color:var(--muted); font-size:.85rem; margin-top:8px; }
 @media(max-width:640px) { .section-nav { gap:0 16px; } .language-heading { gap:12px; } }
+
+.banner { position:relative; isolation:isolate; display:grid; grid-template-columns:46% 54%; align-items:center; width:100%; aspect-ratio:1024/500; overflow:hidden; border:1px solid var(--line); border-radius:20px; color:#314a34; background:linear-gradient(115deg,#e7e8d6 16%,#c3d2af 100%); }
+.banner-copy { position:relative; z-index:2; display:grid; gap:clamp(2px,1vw,10px); padding-inline-start:11%; line-height:1.2; }
+.banner-copy strong { font-size:clamp(1.35rem,5vw,3.5rem); letter-spacing:-.045em; }
+.banner-copy span { font-size:clamp(.67rem,1.7vw,1.12rem); font-weight:600; line-height:1.45; }
+.banner-art { position:relative; align-self:stretch; }
+.banner-art img { position:absolute; display:block; width:37%; height:auto; aspect-ratio:221/480; object-fit:cover; border:clamp(2px,.5vw,6px) solid #e7e8d6; border-radius:clamp(6px,1.5vw,18px); box-shadow:0 14px 35px #0004; }
+.banner-art .rear { top:16%; right:10%; transform:rotate(10deg); }
+.banner-art .front { z-index:1; top:7%; left:13%; transform:rotate(-7deg); }
+@media(max-width:640px) { .banner { border-radius:14px; } }
 </style>
 </head>
 <body>
@@ -114,6 +123,10 @@ footer p { margin: 16px 0 0; }
 <main id="main">
 <p class="site"><a href="https://hootchi.github.io/">← Atto Studio</a></p>
 <header class="hero" id="top">
+<div class="banner" aria-hidden="true">
+  <div class="banner-copy"><strong>하루 한 컷</strong><span>사진 한 장으로 모으는 일상</span></div>
+  <div class="banner-art"><img class="rear" src="assets/film-strip.jpg" alt=""><img class="front" src="assets/calendar.jpg" alt=""></div>
+</div>
 <div class="title">
   <img src="assets/icon.png" width="1024" height="1024" alt="">
   <h1>하루 한 컷: 매일 사진 일기<span class="en" lang="en">Daily Cut: One Photo a Day</span></h1>
