@@ -1,8 +1,8 @@
 {
   "name": "Lumi Pop",
   "name_ko": "루미팡",
-  "summary": "Light up the sky islands with Lumi in a match-3 puzzle. Available on the App Store; Android is in closed testing.",
-  "summary_ko": "루미와 빛 조각을 맞추며 하늘섬을 밝혀요. App Store 출시 · Android 비공개 테스트 중입니다.",
+  "summary": "Light up the sky islands with Lumi in a match-3 puzzle. Available on the App Store; See the Android closed test guide.",
+  "summary_ko": "루미와 빛 조각을 맞추며 하늘섬을 밝혀요. App Store 출시 · Android 비공개 테스트 안내를 확인해 주세요.",
   "since": "2026-10-08",
   "links": [
     { "label": "App Store", "href": "https://apps.apple.com/app/id6821343149" },

@@ -1,0 +1,12 @@
+{
+  "name": "겹치는 서재",
+  "summary": "읽은 책과 읽고 싶은 책을 정리하고 내 서재를 공유하는 독서 기록 앱입니다. App Store에서 다운로드할 수 있습니다.",
+  "since": "2026-11-22",
+  "links": [
+    { "label": "App Store", "href": "https://apps.apple.com/kr/app/id6824933807" },
+    { "label": "앱 소개", "href": "index.html" },
+    { "label": "웹 서재", "href": "https://overlappinglibrary.pages.dev/" },
+    { "label": "개인정보 처리방침", "href": "https://overlappinglibrary.pages.dev/privacy/" }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}

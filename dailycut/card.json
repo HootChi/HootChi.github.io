@@ -1,0 +1,29 @@
+{
+  "name": "Daily Cut: One Photo a Day",
+  "name_ko": "하루 한 컷: 매일 사진 일기",
+  "summary": "Keep one photo a day and turn your memories into calendars, film strips and posters. Available on the App Store.",
+  "summary_ko": "하루 사진 한 장을 달력·필름 띠·포스터로 모아 보세요. iPhone·iPad App Store에서 다운로드할 수 있습니다.",
+  "since": "2026-11-22",
+  "links": [
+    {
+      "label": "App Store",
+      "href": "https://apps.apple.com/app/id6827981263"
+    },
+    {
+      "label": "About the app",
+      "label_ko": "앱 소개",
+      "href": "index.html"
+    },
+    {
+      "label": "Privacy Policy",
+      "label_ko": "개인정보 처리방침",
+      "href": "privacy/"
+    },
+    {
+      "label": "Support",
+      "label_ko": "고객 지원",
+      "href": "support/"
+    }
+  ],
+  "contact": "attostudio.support@gmail.com"
+}
